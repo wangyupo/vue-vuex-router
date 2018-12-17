@@ -7,8 +7,10 @@ function resolve(dir) {
 module.exports = {
     // 开启生产环境SourceMap
     productionSourceMap: true,
+
     // 关闭ESLint
     lintOnSave: false,
+
     devServer: {
         open: false, // 是否自动打开浏览器页面
         host: '127.0.0.1', // 指定使用一个 host。默认是 localhost
@@ -26,12 +28,14 @@ module.exports = {
             }
         }
     },
+
     chainWebpack: (config) => {
         config.resolve.alias
             .set('@', resolve('src'))
             .set('assets', resolve('src/assets'))
             .set('components', resolve('src/components'))
     },
+
     configureWebpack: config => {
         if (process.env.NODE_ENV === 'production') {
             return {
@@ -53,5 +57,23 @@ module.exports = {
                 ]
             }
         }
+    },
+
+    css: {
+      loaderOptions: {
+        stylus: {
+          'resolve url': true,
+          'import': [
+            './src/theme'
+          ]
+        }
+      }
+    },
+
+    pluginOptions: {
+      'cube-ui': {
+        postCompile: true,
+        theme: true
+      }
     }
 }

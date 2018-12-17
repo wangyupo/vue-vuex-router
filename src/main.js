@@ -1,9 +1,11 @@
 import Vue from 'vue'
+import './cube-ui'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 import i18n from './config/lang'
 import filters from './filters'
+import 'amfe-flexible'
 
 Vue.config.productionTip = false
 
