@@ -10,12 +10,11 @@
 			iconfont:
 			<i class="iconfont icon-weibo"></i>
 		</p>
-		<p>
+		<p @click="handleI18n">
 			i18n:
 			{{$t('home.name', {name: 'Jelly'})}}
 		</p>
-		<p>
-            vue过滤器:
+		<p>vue过滤器:
 			<br>
 			{{1544179366 | timeFilter}}
 			<br>
@@ -25,8 +24,7 @@
 			<br>
 			{{5000039 | toThousands}}
 		</p>
-		<p>
-            倒计时：
+		<p>倒计时：
 			<count-down
 				v-on:start_callback="timeStart()"
 				v-on:end_callback="timeEnd()"
@@ -43,7 +41,7 @@
 		</p>
 		<p>
 			proxy代理：
-			{{rank.ok}}
+			{{rank.ok?'成功':'失败'}}
 		</p>
 		<Dialog v-model="showDialog" :showClose="true">
 			<div class="dialog-content">this is dialog content!</div>
@@ -86,6 +84,9 @@
 			timeEnd() {},
 			handleDialog() {
 				this.showDialog = true;
+			},
+			handleI18n() {
+				this.$i18n.locale = this.$i18n.locale === "en-US" ? "zh-CN" : "en-US";
 			}
 		}
 	};
