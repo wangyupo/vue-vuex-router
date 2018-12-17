@@ -1,14 +1,23 @@
 <template>
 	<div class="home">
-		<swiper :options="swiperOption" ref="mySwiper">
+		<div class="swiper">
+			<swiper :options="swiperOption" ref="mySwiper">
 				<!-- slides -->
-				<swiper-slide>I'm Slide 1</swiper-slide>
-				<swiper-slide>I'm Slide 2</swiper-slide>
-				<swiper-slide>I'm Slide 3</swiper-slide>
+				<swiper-slide>
+					<div class="swiper-item">I'm Slide 1</div>
+				</swiper-slide>
+				<swiper-slide>
+					<div class="swiper-item">I'm Slide 2</div>
+				</swiper-slide>
+				<swiper-slide>
+					<div class="swiper-item">I'm Slide 3</div>
+				</swiper-slide>
 				<!-- Optional controls -->
-				<div class="swiper-button-prev" slot="button-prev"></div>
-				<div class="swiper-button-next" slot="button-next"></div>
+				<div class="swiper-pagination" slot="pagination"></div>
+				<!-- <div class="swiper-button-prev" slot="button-prev"></div>
+				<div class="swiper-button-next" slot="button-next"></div> -->
 			</swiper>
+		</div>
 		<div class="border">1像素边框</div>
 		<cube-button @click="handleDialog">Button</cube-button>
 		<p>
@@ -82,9 +91,19 @@
 				swiperOption: {
 					// some swiper options/callbacks
 					// 所有的参数同 swiper 官方 api 参数
+					// effect: "coverflow",
 					loop: true,
-					height: 300
-					// autoHeight: true,
+					autoplay: {
+						delay: 5000 //5秒切换一次
+					},
+					speed: 1000,
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev"
+					},
+					pagination: {
+						el: ".swiper-pagination"
+					}
 				}
 			};
 		},
@@ -103,7 +122,6 @@
 			// current swiper instance
 			// 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
 			console.log("this is current swiper instance object", this.swiper);
-			this.swiper.slideTo(3, 1000, false);
 		},
 		methods: {
 			...mapActions("user", ["changeUserInfo", "getRank"]),
@@ -129,6 +147,10 @@
 		.swiper {
 			width: 100%;
 			height: 200px; /*no*/
+			.swiper-item {
+				height: 200px; /*no*/
+				line-height: 200px; /*no*/
+			}
 		}
 		.border {
 			display: flex;
