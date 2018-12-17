@@ -42,7 +42,7 @@ yarn push
 
 ## 移动端适配
 
-移动端适配采用 [amfe-flexible](https://github.com/amfe/lib-flexible)，在 main.js 中引入，使用的时候按照设计稿输入px，在网页上会自动实现rem的转换。
+移动端适配采用 [amfe-flexible](https://github.com/amfe/lib-flexible)，在 main.js 中引入，使用的时候按照设计稿输入px，插件会自动实现rem的转换。
 
 ### 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
