@@ -1,0 +1,59 @@
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin ct {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin cl {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin modalbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin sc($size, $color) {
+    font-size: $size;
+    color: $color;
+}
+
+@mixin fj($type: space-between) {
+    display: flex;
+    justify-content: $type;
+}
+
+@mixin flex($direction: column, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+@mixin clear() {
+    &:after {
+        content: '.';
+        clear: both;
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+}
