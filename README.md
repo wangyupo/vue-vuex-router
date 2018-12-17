@@ -38,7 +38,11 @@ yarn push
 
 ## 组件库
 
-组件库使用滴滴的[cube-ui](https://didi.github.io/cube-ui/#/zh-CN)，在 src/cube-ui.js 里按需引入，并且可以在 src/theme.styl 里修改组件默认样式。
+组件库使用滴滴的 [cube-ui](https://didi.github.io/cube-ui/#/zh-CN)，在 src/cube-ui.js 里按需引入，并且可以在 src/theme.styl 里修改组件默认样式。
+
+## 移动端适配
+
+移动端适配采用 [amfe-flexible](https://github.com/amfe/lib-flexible)，在 main.js 中引入，使用的时候按照设计稿输入px，在网页上会自动实现rem的转换。
 
 ### 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -1,7 +1,5 @@
 <template>
 	<div class="home">
-		<img alt="Vue logo" src="../assets/logo.png">
-		<HelloWorld msg="Welcome to Your Vue.js App"/>
 		<span @click="changeUserInfo(233)">{{getUserInfo}}</span>
 		<i class="iconfont icon-weibo"></i>
 		{{$t('home.name', {name: 'Jelly'})}}
@@ -33,7 +31,6 @@
 
 <script>
 	// @ is an alias to /src
-	import HelloWorld from "@/components/HelloWorld.vue";
 	import CountDown from "@/components/CountDown.vue";
 	import Dialog from "@/components/Dialog.vue";
 	import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
@@ -43,7 +40,6 @@
 	export default {
 		name: "home",
 		components: {
-            HelloWorld,
             CountDown,
             Dialog
         },
@@ -76,6 +72,9 @@
 
 <style lang="scss" scoped>
 	@import "~@/assets/iconfont/iconfont.css";
+    .home {
+        font-size: 24px;
+    }
     .dialog-content {
         width: 300px;
         height: 180px;
