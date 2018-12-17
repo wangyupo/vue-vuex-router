@@ -74,7 +74,7 @@
 <style lang="scss" scoped>
 	@import "~@/assets/iconfont/iconfont.css";
     .home {
-        font-size: 24px;
+        font-size: 14px;
     }
     .dialog-content {
         width: 300px;
