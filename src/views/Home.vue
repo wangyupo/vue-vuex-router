@@ -1,8 +1,6 @@
 <template>
 	<div class="home">
-		<div class="border">
-            1像素边框
-        </div>
+		<div class="border">1像素边框</div>
 		<cube-button @click="handleDialog">Button</cube-button>
 		<p>
 			vuex:
@@ -43,10 +41,13 @@
 				:secondsTxt="''"
 			></count-down>
 		</p>
+		<p>
+			proxy代理：
+			{{rank.ok}}
+		</p>
 		<Dialog v-model="showDialog" :showClose="true">
 			<div class="dialog-content">this is dialog content!</div>
 		</Dialog>
-		{{rank.ok}}
 	</div>
 </template>
 
@@ -98,9 +99,9 @@
 			margin: 20px auto;
 		}
 		.border {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			width: 100px;
 			height: 200px;
 			margin: 20px auto;
