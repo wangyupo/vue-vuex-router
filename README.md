@@ -46,5 +46,9 @@ yarn push
 
 Tips：如果需要使用 px 作为单位，可以把 PX 大写，或者在后面加 /* no */
 
+## 其他组件
+
+[vue-awesome-swiper 滚动组件库](https://github.com/surmon-china/vue-awesome-swiper)
+
 ### 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
