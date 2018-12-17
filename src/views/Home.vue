@@ -1,5 +1,6 @@
 <template>
 	<div class="home">
+        <cube-button>Button</cube-button>
 		<span @click="changeUserInfo(233)">{{getUserInfo}}</span>
 		<i class="iconfont icon-weibo"></i>
 		{{$t('home.name', {name: 'Jelly'})}}
