@@ -1,33 +1,52 @@
 <template>
 	<div class="home">
-        <div class="border"></div>
-        <cube-button>Button</cube-button>
-		<span @click="changeUserInfo(233)">{{getUserInfo}}</span>
-		<i class="iconfont icon-weibo"></i>
-		{{$t('home.name', {name: 'Jelly'})}}
-		{{1544179366 | timeFilter}}
-		{{15311959057 | formatPhone}}
-		{{123123123123132 | formatBank}}
-		{{5000039 | toThousands}}
-		<count-down
-			v-on:start_callback="timeStart()"
-			v-on:end_callback="timeEnd()"
-			:startTime="'4100829240'"
-			:endTime="'4101002040'"
-			:tipText="'距开始还有'"
-			:tipTextEnd="'距结束还有'"
-			:endText="'距结束还有 0天 00:00:00'"
-			:dayTxt="'天'"
-			:hourTxt="':'"
-			:minutesTxt="':'"
-			:secondsTxt="''"
-		></count-down>
-        <Dialog v-model="showDialog" :showClose="true" >
-            <div class="dialog-content">
-                this is dialog content!
-            </div>
-        </Dialog>
-        {{rank.ok}}
+		<div class="border">
+            1像素边框
+        </div>
+		<cube-button @click="handleDialog">Button</cube-button>
+		<p>
+			vuex:
+			<span @click="changeUserInfo(233)">{{getUserInfo}}</span>
+		</p>
+		<p>
+			iconfont:
+			<i class="iconfont icon-weibo"></i>
+		</p>
+		<p>
+			i18n:
+			{{$t('home.name', {name: 'Jelly'})}}
+		</p>
+		<p>
+            vue过滤器:
+			<br>
+			{{1544179366 | timeFilter}}
+			<br>
+			{{15311959057 | formatPhone}}
+			<br>
+			{{123123123123132 | formatBank}}
+			<br>
+			{{5000039 | toThousands}}
+		</p>
+		<p>
+            倒计时：
+			<count-down
+				v-on:start_callback="timeStart()"
+				v-on:end_callback="timeEnd()"
+				:startTime="'4100829240'"
+				:endTime="'4101002040'"
+				:tipText="'距开始还有'"
+				:tipTextEnd="'距结束还有'"
+				:endText="'距结束还有 0天 00:00:00'"
+				:dayTxt="'天'"
+				:hourTxt="':'"
+				:minutesTxt="':'"
+				:secondsTxt="''"
+			></count-down>
+		</p>
+		<Dialog v-model="showDialog" :showClose="true">
+			<div class="dialog-content">this is dialog content!</div>
+		</Dialog>
+		{{rank.ok}}
 	</div>
 </template>
 
@@ -42,14 +61,14 @@
 	export default {
 		name: "home",
 		components: {
-            CountDown,
-            Dialog
-        },
-        data() {
-            return  {
-                showDialog: false
-            }
-        },
+			CountDown,
+			Dialog
+		},
+		data() {
+			return {
+				showDialog: false
+			};
+		},
 		computed: {
 			...mapState("user", ["userInfo", "rank"]),
 			...mapGetters("user", ["getUserInfo"])
@@ -57,36 +76,41 @@
 		mounted() {
 			// getUserInfo().then(res => {
 			// 	console.log("proxy", res);
-            // });
-            this.getRank();
+			// });
+			this.getRank();
 		},
 		methods: {
-            ...mapActions("user", ["changeUserInfo", "getRank"]),
-            timeStart() {
-
-            },
-            timeEnd() {
-
-            },
+			...mapActions("user", ["changeUserInfo", "getRank"]),
+			timeStart() {},
+			timeEnd() {},
+			handleDialog() {
+				this.showDialog = true;
+			}
 		}
 	};
 </script>
 
 <style lang="scss" scoped>
 	@import "~@/assets/iconfont/iconfont.css";
-    .home {
-        font-size: 14px;
-        .border {
+	.home {
+		font-size: 14px;
+		p {
+			margin: 20px auto;
+		}
+		.border {
+            display: flex;
+            justify-content: center;
+            align-items: center;
 			width: 100px;
 			height: 200px;
-            margin: 20px auto;
-            position: relative;
-            @include border();
+			margin: 20px auto;
+			position: relative;
+			@include border();
 		}
-    }
-    .dialog-content {
-        width: 300px;
-        height: 180px;
-        background-color: #fff;
-    }
+	}
+	.dialog-content {
+		width: 300px;
+		height: 180px;
+		background-color: #fff;
+	}
 </style>
