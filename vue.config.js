@@ -13,7 +13,7 @@ module.exports = {
 
     devServer: {
         open: false, // 是否自动打开浏览器页面
-        host: '127.0.0.1', // 指定使用一个 host。默认是 localhost
+        host: '0.0.0.0', // 指定使用一个 host。默认是 localhost
         port: 8080, // 端口地址
         https: false, // 使用https提供服务
 
@@ -59,20 +59,23 @@ module.exports = {
         }
     },
     css: {
-      loaderOptions: {
-        stylus: {
-          'resolve url': true,
-          'import': [
-            './src/theme'
-          ]
+        loaderOptions: {
+            stylus: {
+                'resolve url': true,
+                'import': [
+                    './src/theme'
+                ]
+            },
+            sass: {
+                data: `@import "@/style/mixin.scss";`
+            }
         }
-      }
     },
 
     pluginOptions: {
-      'cube-ui': {
-        postCompile: true,
-        theme: true
-      }
+        'cube-ui': {
+            postCompile: true,
+            theme: true
+        }
     }
 }

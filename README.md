@@ -44,5 +44,7 @@ yarn push
 
 移动端适配采用 [amfe-flexible](https://github.com/amfe/lib-flexible)，在 main.js 中引入，使用的时候按照设计稿输入px，插件会自动实现rem的转换。
 
+Tips：如果需要使用 px 作为单位，可以把 PX 大写，或者在后面加 /*no*/
+
 ### 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).

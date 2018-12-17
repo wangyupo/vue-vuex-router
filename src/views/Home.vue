@@ -1,5 +1,6 @@
 <template>
 	<div class="home">
+        <div class="border"></div>
         <cube-button>Button</cube-button>
 		<span @click="changeUserInfo(233)">{{getUserInfo}}</span>
 		<i class="iconfont icon-weibo"></i>
@@ -75,6 +76,13 @@
 	@import "~@/assets/iconfont/iconfont.css";
     .home {
         font-size: 14px;
+        .border {
+			width: 100px;
+			height: 200px;
+            margin: 20px auto;
+            position: relative;
+            @include border();
+		}
     }
     .dialog-content {
         width: 300px;
