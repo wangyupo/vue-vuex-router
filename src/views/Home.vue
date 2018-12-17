@@ -1,5 +1,14 @@
 <template>
 	<div class="home">
+		<swiper :options="swiperOption" ref="mySwiper">
+				<!-- slides -->
+				<swiper-slide>I'm Slide 1</swiper-slide>
+				<swiper-slide>I'm Slide 2</swiper-slide>
+				<swiper-slide>I'm Slide 3</swiper-slide>
+				<!-- Optional controls -->
+				<div class="swiper-button-prev" slot="button-prev"></div>
+				<div class="swiper-button-next" slot="button-next"></div>
+			</swiper>
 		<div class="border">1像素边框</div>
 		<cube-button @click="handleDialog">Button</cube-button>
 		<p>
@@ -53,6 +62,8 @@
 	// @ is an alias to /src
 	import CountDown from "@/components/CountDown.vue";
 	import Dialog from "@/components/Dialog.vue";
+	import "swiper/dist/css/swiper.css";
+	import { swiper, swiperSlide } from "vue-awesome-swiper";
 	import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 	import env from "@/config/env";
 	import { getUserInfo } from "@/api/common";
@@ -61,22 +72,38 @@
 		name: "home",
 		components: {
 			CountDown,
-			Dialog
+			Dialog,
+			swiper,
+			swiperSlide
 		},
 		data() {
 			return {
-				showDialog: false
+				showDialog: false,
+				swiperOption: {
+					// some swiper options/callbacks
+					// 所有的参数同 swiper 官方 api 参数
+					loop: true,
+					height: 300
+					// autoHeight: true,
+				}
 			};
 		},
 		computed: {
 			...mapState("user", ["userInfo", "rank"]),
-			...mapGetters("user", ["getUserInfo"])
+			...mapGetters("user", ["getUserInfo"]),
+			swiper() {
+				return this.$refs.mySwiper.swiper;
+			}
 		},
 		mounted() {
 			// getUserInfo().then(res => {
 			// 	console.log("proxy", res);
 			// });
 			this.getRank();
+			// current swiper instance
+			// 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
+			console.log("this is current swiper instance object", this.swiper);
+			this.swiper.slideTo(3, 1000, false);
 		},
 		methods: {
 			...mapActions("user", ["changeUserInfo", "getRank"]),
@@ -98,6 +125,10 @@
 		font-size: 14px;
 		p {
 			margin: 20px auto;
+		}
+		.swiper {
+			width: 100%;
+			height: 200px; /*no*/
 		}
 		.border {
 			display: flex;

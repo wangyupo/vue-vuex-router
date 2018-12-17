@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import Layout from "@/layout";
+	import Layout from "@/layouts";
 	export default {
 		name: "App",
 		components: {
