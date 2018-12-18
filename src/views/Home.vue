@@ -34,12 +34,16 @@
 		</p>
 		<p>vue过滤器:
 			<br>
+            时间戳：
 			{{1544179366 | timeFilter}}
 			<br>
+            手机号：
 			{{15311959057 | formatPhone}}
 			<br>
+            银行卡：
 			{{123123123123132 | formatBank}}
 			<br>
+            千分隔：
 			{{5000039 | toThousands}}
 		</p>
 		<p>倒计时：

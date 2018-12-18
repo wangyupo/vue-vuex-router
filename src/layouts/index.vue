@@ -16,6 +16,8 @@
 
 <style lang="scss" scoped>
     .layout-container {
-
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
 </style>
