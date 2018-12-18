@@ -6,6 +6,9 @@ import store from './store'
 import i18n from './config/lang'
 import filters from './filters'
 import 'amfe-flexible'
+import lodash from 'lodash'
+
+Vue.prototype._ = lodash        // this._
 
 Vue.config.productionTip = false
 

@@ -11,6 +11,7 @@
     "axios": "^0.18.0",
     "cube-ui": "~1.12.1",
     "dayjs": "^1.7.7",
+    "lodash": "^4.17.11",
     "vconsole": "^3.2.0",
     "vue": "^2.5.17",
     "vue-awesome-swiper": "^3.1.3",
