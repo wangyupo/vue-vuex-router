@@ -90,7 +90,7 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 
 8、布局
 
-布局在 layouts 文件夹中，然后在 App.vue 中引入，放在了路由的最外层，充当整个项目的公共布局，如：页眉、页脚。
+布局在 layouts 文件夹中，然后在 App.vue 中引入，放在了路由的最外层，充当整个项目的公共布局，如：页眉、页脚等。
 
 ### 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
