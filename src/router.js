@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// 按需加载（vue实现）
-const Home = () => import(/* webpackChunkName: "home" */ './views/Home.vue')
-const About = () => import(/* webpackChunkName: "about" */ './views/About.vue')
+// 按需（懒）加载
+const Home = () => import( /* webpackChunkName: "home" */ './views/Home.vue')
+const About = () => import( /* webpackChunkName: "about" */ './views/About.vue')
 
 Vue.use(Router)
 
