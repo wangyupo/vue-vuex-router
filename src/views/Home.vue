@@ -33,9 +33,9 @@
 
 <script>
 	// @ is an alias to /src
-	import HelloWorld from "@/components/HelloWorld.vue";
-	import CountDown from "@/components/CountDown.vue";
-	import Dialog from "@/components/Dialog.vue";
+	import HelloWorld from "@/components/helloWorld.vue";
+	import CountDown from "@/components/countDown.vue";
+	import Dialog from "@/components/dialog.vue";
 	import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 	import env from "@/config/env";
 	import { getUserInfo } from "@/api/common";

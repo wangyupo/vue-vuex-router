@@ -6,8 +6,8 @@ import Router from 'vue-router'
 // import About from '../views/About.vue'
 
 // 按需（懒）加载（vue实现）
-const Home = () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
-const About = () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+const Home = () => import(/* webpackChunkName: "home" */ '../views/home.vue')
+const About = () => import(/* webpackChunkName: "about" */ '../views/about.vue')
 
 // 按需（懒）加载（webpack实现）
 // const Home = r => require.ensure([], () => r(require('../views/Home.vue')), 'home')
