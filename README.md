@@ -37,6 +37,21 @@ yarn push
     - views             // 页面目录
 ```
 
+## 组件库
+
+组件库使用滴滴的 [cube-ui](https://didi.github.io/cube-ui/#/zh-CN)，在 src/cube-ui.js 里按需引入，并且可以在 src/theme.styl 里修改组件默认样式。
+
+## 移动端适配
+
+移动端适配采用 [amfe-flexible](https://github.com/amfe/lib-flexible)，在 main.js 中引入，使用的时候按照设计稿输入px，插件会自动实现rem的转换。
+
+Tips：如果需要使用 px 作为单位，可以把 PX 大写，或者在后面加 /* no */
+
+## 其他组件
+
+[vue-awesome-swiper 滚动组件库](https://github.com/surmon-china/vue-awesome-swiper)
+[xgplayer 西瓜播放器](https://h5player.bytedance.com/)
+
 ## 推荐规范
 
 1、命名
@@ -61,21 +76,6 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 4、格式化方法
 
 数据的格式化，如时间戳、隐藏手机号、格式化银行卡等操作，不建议在vue页面中用方法修改数据，建议在 fliters 中说明过滤器，然后在模版中 {{data | fliter}} 格式化数据，可以使数据更干净。
-
-## 组件库
-
-组件库使用滴滴的 [cube-ui](https://didi.github.io/cube-ui/#/zh-CN)，在 src/cube-ui.js 里按需引入，并且可以在 src/theme.styl 里修改组件默认样式。
-
-## 移动端适配
-
-移动端适配采用 [amfe-flexible](https://github.com/amfe/lib-flexible)，在 main.js 中引入，使用的时候按照设计稿输入px，插件会自动实现rem的转换。
-
-Tips：如果需要使用 px 作为单位，可以把 PX 大写，或者在后面加 /* no */
-
-## 其他组件
-
-[vue-awesome-swiper 滚动组件库](https://github.com/surmon-china/vue-awesome-swiper)
-[xgplayer 西瓜播放器](https://h5player.bytedance.com/)
 
 ### 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
