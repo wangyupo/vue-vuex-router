@@ -1,20 +1,64 @@
-@mixin center {
+//定位全屏
+@mixin allcover {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+//transform上下左右居中
+@mixin ct {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-@mixin ct {
+//定位上下左右居中
+@mixin ctp($width, $height) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -$height/2;
+    margin-left: -$width/2;
+}
+
+//定位上下居中
+@mixin tb {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
 
-@mixin cl {
+//定位左右居中
+@mixin lr {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+//字体大小、行高、字体
+@mixin ft($size, $line-height) {
+    font-size: $size;
+    line-height: $line-height;
+}
+
+//字体大小，颜色
+@mixin sc($size, $color) {
+    font-size: $size;
+    color: $color;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between) {
+    display: flex;
+    justify-content: $type;
+
 }
 
 @mixin modalbg {
@@ -24,21 +68,6 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.2);
-}
-
-@mixin wh($width, $height) {
-    width: $width;
-    height: $height;
-}
-
-@mixin sc($size, $color) {
-    font-size: $size;
-    color: $color;
-}
-
-@mixin fj($type: space-between) {
-    display: flex;
-    justify-content: $type;
 }
 
 @mixin flex($direction: column, $wrap: nowrap) {
