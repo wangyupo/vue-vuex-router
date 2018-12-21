@@ -86,7 +86,7 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 
 7、vue-router
 
-统一采用按需加载，里面写好了方法，使用就行了。
+统一采用按需加载，如：const Home = () => import( /* webpackChunkName: "home" */ '../views/home.vue')，其中的 webpackChunkName 指的是打包出来的包名。
 
 8、布局
 
