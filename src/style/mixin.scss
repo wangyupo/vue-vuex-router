@@ -58,7 +58,16 @@
 @mixin fj($type: space-between) {
     display: flex;
     justify-content: $type;
+}
 
+//2倍图、3倍图，默认2倍图
+@mixin bg-image($url) {
+    background-image: url("./images/"+ $url + "@2x.png");
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min-device-pixel-ratio: 2) {
+        background-image: url("./images/"+ $url + "@3x.png");
+    }
 }
 
 @mixin modalbg {
