@@ -12,7 +12,13 @@ let base = `${process.env.BASE_URL}` // 动态获取二级目录
 export default new Router({
     mode: 'history',
     base: base,
-    routes: [{
+    routes: [
+        //地址为空时跳转home页面
+        {
+            path: '',
+            redirect: '/home'
+        },
+        {
             path: '/',
             name: 'home',
             component: Home
