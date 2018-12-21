@@ -1,7 +1,4 @@
+@import "./reset.scss";
 @import "./var.scss";
 @import "./mixin.scss";
-
-.gColor {
-    color: $bg-color;
-    font-weight: bold;
-}
+@import "./common.scss";
