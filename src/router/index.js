@@ -20,8 +20,7 @@ let base = `${process.env.BASE_URL}` // 动态获取二级目录
 export default new Router({
     mode: 'history',
     base: base,
-    routes: [
-        {
+    routes: [{
             path: '/',
             name: 'home',
             component: Home
@@ -29,7 +28,11 @@ export default new Router({
         {
             path: '/about',
             name: 'about',
-            component: About,
+            component: About
+        },
+        {
+            path: '*',
+            redirect: '/'
         }
     ],
     scrollBehavior(to, from, savedPosition) {
