@@ -1,25 +1,7 @@
 <template>
 	<div class="home">
-		<div class="swiper">
-			<swiper :options="swiperOption" ref="mySwiper">
-				<!-- slides -->
-				<swiper-slide>
-					<div class="swiper-item">I'm Slide 1</div>
-				</swiper-slide>
-				<swiper-slide>
-					<div class="swiper-item">I'm Slide 2</div>
-				</swiper-slide>
-				<swiper-slide>
-					<div class="swiper-item">I'm Slide 3</div>
-				</swiper-slide>
-				<!-- Optional controls -->
-				<div class="swiper-pagination" slot="pagination"></div>
-				<!-- <div class="swiper-button-prev" slot="button-prev"></div>
-				<div class="swiper-button-next" slot="button-next"></div> -->
-			</swiper>
-		</div>
 		<div class="border">1像素边框</div>
-		<cube-button @click="handleDialog">Button</cube-button>
+		<button @click="handleDialog">Button</button>
 		<p>
 			vuex:
 			<span @click="changeUserInfo(233)">{{getUserInfo}}</span>
