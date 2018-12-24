@@ -58,7 +58,6 @@
 	import CountDown from "@/components/countDown.vue";
 	import Dialog from "@/components/dialog.vue";
 	import "swiper/dist/css/swiper.css";
-	import { swiper, swiperSlide } from "vue-awesome-swiper";
 	import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 	import env from "@/config/env";
 	import { getUserInfo } from "@/api/common";
@@ -68,46 +67,21 @@
 		components: {
 			CountDown,
 			Dialog,
-			swiper,
-			swiperSlide
 		},
 		data() {
 			return {
 				showDialog: false,
-				swiperOption: {
-					// some swiper options/callbacks
-					// 所有的参数同 swiper 官方 api 参数
-					// effect: "coverflow",
-					loop: true,
-					autoplay: {
-						delay: 5000 //5秒切换一次
-					},
-					speed: 1000,
-					navigation: {
-						nextEl: ".swiper-button-next",
-						prevEl: ".swiper-button-prev"
-					},
-					pagination: {
-						el: ".swiper-pagination"
-					}
-				}
 			};
 		},
 		computed: {
 			...mapState("user", ["userInfo", "rank"]),
 			...mapGetters("user", ["getUserInfo"]),
-			swiper() {
-				return this.$refs.mySwiper.swiper;
-			}
 		},
 		mounted() {
 			// getUserInfo().then(res => {
 			// 	console.log("proxy", res);
 			// });
 			this.getRank();
-			// current swiper instance
-			// 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
-			console.log("this is current swiper instance object", this.swiper);
 		},
 		methods: {
 			...mapActions("user", ["changeUserInfo", "getRank"]),

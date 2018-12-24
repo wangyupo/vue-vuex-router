@@ -21,7 +21,7 @@
 		computed: {
 			// 除首页、我的，其他页面不显示tabBar，需要显示的添加到白名单即可
 			isBar() {
-				let whiteNameList = ["home", "my"];
+				let whiteNameList = ["demoPage", "my"];
 				if (whiteNameList.includes(this.$route.name)) {
 					return true;
 				}

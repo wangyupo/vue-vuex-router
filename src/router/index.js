@@ -3,9 +3,7 @@ import Router from 'vue-router'
 
 // 按需（懒）加载
 const DemoPage = () => import( /* webpackChunkName: "home" */ '../views/demo.vue')
-const Home = () => import( /* webpackChunkName: "home" */ '../views/home/index.vue')
-const ClassDetail = () => import( /* webpackChunkName: "home" */ '../views/home/classDetail/index.vue')
-const My = () => import( /* webpackChunkName: "home" */ '../views/my/index.vue')
+const My = () => import( /* webpackChunkName: "home" */ '../views/my.vue')
 
 Vue.use(Router)
 
@@ -15,19 +13,9 @@ export default new Router({
     mode: 'history',
     base: base,
     routes: [{
-            path: '/demo',
-            name: 'demopage',
-            component: DemoPage
-        },
-        {
             path: '/',
-            name: 'home',
-            component: Home,
-        },
-        {
-            path: '/class/:id',
-            name: 'classDetail',
-            component: ClassDetail,
+            name: 'demoPage',
+            component: DemoPage
         },
         {
             path: '/my',
