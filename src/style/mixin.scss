@@ -99,6 +99,7 @@
 /* 1像素边框 */
 
 @mixin border($width: 1px, $border-color: #999, $border-radius: initial) {
+    position: relative;
 
     /* 默认 */
     &:after {
@@ -137,6 +138,7 @@
 }
 
 @mixin border-bottom($height: 1px, $width: 100%, $border-color: #999) {
+    position: relative;
 
     /* 默认 */
     &:after {
@@ -170,6 +172,7 @@
 }
 
 @mixin border-top($height: 1px, $width: 100%, $border-color: #999) {
+    position: relative;
 
     /* 默认 */
     &:after {
@@ -201,6 +204,7 @@
 }
 
 @mixin border-right($height: 100%, $width: 1px, $border-color: #999) {
+    position: relative;
 
     /* 默认 */
     &:after {
@@ -232,6 +236,7 @@
 }
 
 @mixin border-left($height: 100%, $width: 1px, $border-color: #999) {
+    position: relative;
 
     /* 默认 */
     &:after {

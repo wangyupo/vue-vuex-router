@@ -39,7 +39,6 @@
 
 <style lang="scss" scoped>
 	.tab-bar {
-		position: relative;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
