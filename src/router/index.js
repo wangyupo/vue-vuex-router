@@ -21,11 +21,6 @@ export default new Router({
     mode: 'history',
     base: base,
     routes: [
-        //地址为空时跳转home页面
-        {
-            path: '',
-            redirect: '/home'
-        },
         {
             path: '/',
             name: 'home',
