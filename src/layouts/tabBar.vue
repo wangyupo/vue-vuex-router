@@ -4,7 +4,7 @@
 			v-for="(item, idx) in tabs"
 			:key="idx"
 			:class="['bar-item', activeIdx == idx ? 'active':'']"
-            @click="clickHandler(idx)"
+			@click="clickHandler(idx, item.name)"
 		>
 			<i :class="['iconfont', item.icon]"></i>
 			<div class="label">{{item.label}}</div>
@@ -19,21 +19,24 @@
 				tabs: [
 					{
 						label: "首页",
-						icon: "icon-weibo"
+						icon: "icon-weibo",
+						name: "home"
 					},
 					{
 						label: "我的",
-						icon: "icon-weibo"
+						icon: "icon-weibo",
+						name: "my"
 					}
 				],
 				activeIdx: "0"
 			};
-		},
-        methods: {
-            clickHandler(idx) {
-                this.activeIdx = idx;
-            },
-        }
+        },
+		methods: {
+			clickHandler(idx, routerName) {
+				this.activeIdx = idx;
+				this.$router.push({ name: routerName });
+			}
+		}
 	};
 </script>
 
@@ -45,14 +48,15 @@
 		height: 60px;
 		@include border-top();
 		.bar-item {
-            flex: 1;
-			font-size: 14px;
+			flex: 1;
+            font-size: 14px;
+            text-align: center;
 			.iconfont {
-                font-size: 24px;
+				font-size: 24px;
 			}
 		}
-        .bar-item.active {
-            color: red;
-        }
+		.bar-item.active {
+			color: red;
+		}
 	}
 </style>

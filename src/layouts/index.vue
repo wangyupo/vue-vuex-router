@@ -3,7 +3,7 @@
 		<div class="content-container">
 			<slot></slot>
 		</div>
-		<TabBar/>
+		<TabBar v-show="isBar"/>
 	</div>
 </template>
 
@@ -17,6 +17,16 @@
 		},
 		data() {
 			return {};
+		},
+		computed: {
+			// 除首页、我的，其他页面不显示tabBar，需要显示的添加到白名单即可
+			isBar() {
+				let whiteNameList = ["home", "my"];
+				if (whiteNameList.includes(this.$route.name)) {
+					return true;
+				}
+				return false;
+			}
 		}
 	};
 </script>

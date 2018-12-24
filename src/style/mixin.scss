@@ -1,3 +1,5 @@
+@import "var.scss";
+
 //定位全屏
 @mixin allcover {
     position: absolute;
@@ -68,6 +70,16 @@
         only screen and (min-device-pixel-ratio: 2) {
         background-image: url("./images/"+ $url + "@3x.png");
     }
+}
+
+//多行超出省略号
+@mixin ellipsis($line: 2, $line-height: 1.2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    line-height: $line-height;
 }
 
 @mixin modalbg {
