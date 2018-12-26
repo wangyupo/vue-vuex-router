@@ -52,7 +52,10 @@ Tips：如果需要使用 px 作为单位，可以把 PX 大写，或者在后�
 ## 其他组件
 
 [vue-awesome-swiper 滚动组件库](https://github.com/surmon-china/vue-awesome-swiper)
+
 [xgplayer 西瓜播放器](https://h5player.bytedance.com/)
+
+[html2canvas](https://html2canvas.hertzen.com/)
 
 ## 推荐规范
 
