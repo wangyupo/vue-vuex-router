@@ -52,9 +52,34 @@ const toThousands = (val) => {
     return result;
 }
 
+/**
+ * 格式化小数位
+ * @param val 传入的值
+ * @param pos 保留的小数位
+ * @returns {*}
+ */
+const formatFloat = (val, pos = 2) => {
+    let f = parseFloat(val);
+    if (isNaN(f)) {
+        return false;
+    }
+    f = Math.round(val * Math.pow(10, pos)) / Math.pow(10, pos); // pow 幂
+    let s = f.toString();
+    let rs = s.indexOf('.');
+    if (rs < 0) {
+        rs = s.length;
+        s += '.';
+    }
+    while (s.length <= rs + pos) {
+        s += '0';
+    }
+    return s;
+}
+
 export default {
     timeFilter,
     formatPhone,
     formatBank,
-    toThousands
+    toThousands,
+    formatFloat,
 }
