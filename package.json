@@ -12,6 +12,8 @@
     "dayjs": "^1.7.7",
     "fastclick": "^1.0.6",
     "lodash": "^4.17.11",
+    "animate.css": "^3.7.0",
+    "tween.js": "^16.6.0",
     "vconsole": "^3.2.0",
     "vue": "^2.5.17",
     "vue-i18n": "^8.3.2",
