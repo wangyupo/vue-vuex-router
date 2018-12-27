@@ -56,8 +56,7 @@
 <script>
 	// @ is an alias to /src
 	import CountDown from "@/components/countDown.vue";
-	import Dialog from "@/components/dialog.vue";
-	import "swiper/dist/css/swiper.css";
+	import Dialog from "@/components/dialog.vue";   
 	import { mapState, mapMutations, mapActions, mapGetters } from "vuex";
 	import env from "@/config/env";
 	import { getUserInfo } from "@/api/common";
