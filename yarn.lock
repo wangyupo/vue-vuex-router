@@ -912,6 +912,11 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/amdefine/download/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+animate.css@^3.7.0:
+  version "3.7.0"
+  resolved "http://registry.npm.taobao.org/animate.css/download/animate.css-3.7.0.tgz#5de25d1ee5fba11ba6a1e2c4fa568f512eb7d4da"
+  integrity sha1-XeJdHuX7oRumoeLE+laPUS631No=
+
 ansi-colors@^3.0.0:
   version "3.2.3"
   resolved "http://registry.npm.taobao.org/ansi-colors/download/ansi-colors-3.2.3.tgz#57d35b8686e851e2cc04c403f1c00203976a1813"
@@ -6084,6 +6089,11 @@ tunnel-agent@^0.6.0:
   resolved "http://registry.npm.taobao.org/tunnel-agent/download/tunnel-agent-0.6.0.tgz#27a5dea06b36b04a0a9966774b290868f0fc40fd"
   dependencies:
     safe-buffer "^5.0.1"
+
+tween.js@^16.6.0:
+  version "16.6.0"
+  resolved "http://registry.npm.taobao.org/tween.js/download/tween.js-16.6.0.tgz#739104c9336cc4f11ee53f9ce7cede51e6723624"
+  integrity sha1-c5EEyTNsxPEe5T+c587eUeZyNiQ=
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
