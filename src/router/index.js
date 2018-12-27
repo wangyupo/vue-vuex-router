@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // 按需（懒）加载
-const DemoPage = () => import( /* webpackChunkName: "home" */ '../views/demo.vue')
+const Home = () => import( /* webpackChunkName: "home" */ '../views/home.vue')
 const My = () => import( /* webpackChunkName: "home" */ '../views/my.vue')
 
 Vue.use(Router)
@@ -14,8 +14,8 @@ export default new Router({
     base: base,
     routes: [{
             path: '/',
-            name: 'demoPage',
-            component: DemoPage
+            name: 'home',
+            component: Home
         },
         {
             path: '/my',

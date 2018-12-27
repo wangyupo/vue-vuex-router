@@ -20,7 +20,7 @@
 					{
 						label: "首页",
 						icon: "icon-weibo",
-						name: "demoPage"
+						name: "home"
 					},
 					{
 						label: "我的",
