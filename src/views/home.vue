@@ -1,7 +1,13 @@
 <template>
     <div class="home">
-        <span @click="changeUserInfo(233)">{{getUserInfo}}</span>
-        <i class="iconfont icon-weibo"></i>
+        <p @click="changeUserInfo(233)">
+            vuex示例：
+            {{getUserInfo}}
+        </p>
+        <p>
+            iconfont:
+            <i class="iconfont icon-weibo"></i>
+        </p>
         <transition
             enter-active-class="animated fadeIn"
             leave-active-class="animated fadeOut">
