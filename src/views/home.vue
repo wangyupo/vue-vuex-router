@@ -26,12 +26,16 @@
                     :minutesTxt="':'"
                     :secondsTxt="''"
                 ></count-down>
-                {{rank.ok}}
+                反向代理：{{rank.ok?'成功':'失败'}}
             </div>
         </transition>
         <div>
-            {{num | formatFloat}}
+            补间动画：{{num | formatFloat}}
         </div>
+        <p>
+            浮点数运算：
+            0.1+0.2={{number | formatFloat(2)}}
+        </p>
         <Dialog v-model="showDialog" :showClose="true">
             <div class="dialog-content">
                 this is dialog content!
@@ -50,6 +54,7 @@
     import {getUserInfo} from "@/api/common";
     import animate from 'animate.css';
     import TWEEN from 'tween.js';
+    import NP from 'number-precision'
 
     export default {
         name: "home",
@@ -67,7 +72,10 @@
         },
         computed: {
             ...mapState("user", ["userInfo", "rank"]),
-            ...mapGetters("user", ["getUserInfo"])
+            ...mapGetters("user", ["getUserInfo"]),
+            number() {
+                return NP.plus(0.1, 0.2)
+            }
         },
         mounted() {
             this.getRank();
