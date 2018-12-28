@@ -1,55 +1,39 @@
 <template>
     <div class="home">
-        <div class="border">1像素边框</div>
-		<button @click="handleDialog">Button</button>
-		<p>
-			vuex:
-			<span @click="changeUserInfo(233)">{{getUserInfo}}</span>
-		</p>
-		<p>
-			iconfont:
-			<i class="iconfont icon-weibo"></i>
-		</p>
-		<p @click="handleI18n">
-			i18n:
-			{{$t('home.name', {name: 'Jelly'})}}
-		</p>
-		<p>vue过滤器:
-			<br>
-            时间戳：
-			{{1544179366 | timeFilter}}
-			<br>
-            手机号：
-			{{15311959057 | formatPhone}}
-			<br>
-            银行卡：
-			{{123123123123132 | formatBank}}
-			<br>
-            千分隔：
-			{{5000039 | toThousands}}
-		</p>
-		<p>倒计时：
-			<count-down
-				v-on:start_callback="timeStart()"
-				v-on:end_callback="timeEnd()"
-				:startTime="'4100829240'"
-				:endTime="'4101002040'"
-				:tipText="'距开始还有'"
-				:tipTextEnd="'距结束还有'"
-				:endText="'距结束还有 0天 00:00:00'"
-				:dayTxt="'天'"
-				:hourTxt="':'"
-				:minutesTxt="':'"
-				:secondsTxt="''"
-			></count-down>
-		</p>
-		<p>
-			proxy代理：
-			{{rank.ok?'成功':'失败'}}
-		</p>
+        <span @click="changeUserInfo(233)">{{getUserInfo}}</span>
+        <i class="iconfont icon-weibo"></i>
+        <transition
+            enter-active-class="animated fadeIn"
+            leave-active-class="animated fadeOut">
+            <div v-if="show">
+                {{$t('home.name', {name: 'Jelly'})}}
+                {{1544179366 | timeFilter}}
+                {{15311959057 | formatPhone}}
+                {{123123123123132 | formatBank}}
+                {{5000039 | toThousands}}
+                <count-down
+                    v-on:start_callback="timeStart()"
+                    v-on:end_callback="timeEnd()"
+                    :startTime="'4100829240'"
+                    :endTime="'4101002040'"
+                    :tipText="'距开始还有'"
+                    :tipTextEnd="'距结束还有'"
+                    :endText="'距结束还有 0天 00:00:00'"
+                    :dayTxt="'天'"
+                    :hourTxt="':'"
+                    :minutesTxt="':'"
+                    :secondsTxt="''"
+                ></count-down>
+                反向代理：{{rank.ok?'成功':'失败'}}
+            </div>
+        </transition>
         <div>
-            {{num | formatFloat}}
+            补间动画：{{num | formatFloat}}
         </div>
+        <p>
+            浮点数运算：
+            0.1+0.2={{number | formatFloat(2)}}
+        </p>
         <Dialog v-model="showDialog" :showClose="true">
             <div class="dialog-content">
                 this is dialog content!
@@ -67,6 +51,7 @@
     import {getUserInfo} from "@/api/common";
     import animate from 'animate.css';
     import TWEEN from 'tween.js';
+    import NP from 'number-precision'
 
     export default {
         name: "home",
@@ -83,7 +68,10 @@
         },
         computed: {
             ...mapState("user", ["userInfo", "rank"]),
-            ...mapGetters("user", ["getUserInfo"])
+            ...mapGetters("user", ["getUserInfo"]),
+            number() {
+                return NP.plus(0.1, 0.2)
+            }
         },
         mounted() {
             this.getRank();
