@@ -26,6 +26,48 @@ export const removeStore = name => {
 };
 
 /**
+ * 存储sessionStorage
+ * @param key
+ * @param value
+ */
+export const sessionSetItem = (key, value) => {
+    window.sessionStorage.setItem(key, JSON.stringify(value))
+};
+
+/**
+ * 获取sessionStorage
+ * @param key
+ * @returns {any}
+ */
+export const sessionGetItem = (key) => {
+    let result = window.sessionStorage.getItem(key)
+    try {
+        result = JSON.parse(result)
+    } catch (error) {
+        result = result
+    }
+    return result
+};
+
+/**
+ * 删除sessionStorage
+ * @param key
+ * @returns {any}
+ */
+export const sessionRemoveItem = (key) => {
+    window.sessionStorage.removeItem(key)
+};
+
+/**
+ * 清除sessionStorage
+ * @param key
+ * @returns {any}
+ */
+export const sessionClear = () => {
+    window.sessionStorage.clear()
+};
+
+/**
  * 生成随机字符串(可指定长度)
  * @param len
  * @returns {string}

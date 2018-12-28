@@ -1,19 +1,21 @@
 <template>
 	<div class="tab-bar">
-		<div
-			v-for="(item, idx) in tabs"
-			:key="idx"
-			:class="['bar-item', activeIdx == idx ? 'active':'']"
-			@click="clickHandler(idx, item.name)"
-		>
-			<i :class="['iconfont', item.icon]"></i>
-			<div class="label">{{item.label}}</div>
-		</div>
+        <div
+            v-for="(item, idx) in tabs"
+            :key="idx"
+            :class="['bar-item', tabBar === item.name ? 'active':'']"
+            @click="clickHandler(item.name)"
+        >
+            <i :class="['iconfont', item.icon]"></i>
+            <div class="label">{{item.label}}</div>
+        </div>
 	</div>
 </template>
 
 <script>
-	export default {
+    import {sessionGetItem} from "../common/util";
+
+    export default {
 		data() {
 			return {
 				tabs: [
@@ -28,15 +30,15 @@
 						name: "my"
 					}
 				],
-				activeIdx: "0"
-			};
+                tabBar: sessionGetItem('tabBar') || 'home'
+            };
         },
-		methods: {
-			clickHandler(idx, routerName) {
-				this.activeIdx = idx;
-				this.$router.push({ name: routerName });
-			}
-		}
+        methods: {
+            clickHandler(routerName) {
+                this.tabBar = routerName;
+                this.$router.push({ name: routerName });
+            }
+        }
 	};
 </script>
 
