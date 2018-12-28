@@ -9,5 +9,5 @@ if [ ! -n "$remarks" ];then
 fi
 git commit -m "$remarks"
 echo "正在开始提交代码..."
-git push origin master
+git push
 echo "代码提交成功，正在关闭..."

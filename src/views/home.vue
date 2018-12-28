@@ -8,7 +8,7 @@
             enter-active-class="animated fadeIn"
             leave-active-class="animated fadeOut">
             <div v-if="show">
-                {{$t('home.name', {name: 'Jelly'})}}
+                <span @click="handleLang">{{$t('home.name', {name: 'Jelly'})}}</span>
                 {{1544179366 | timeFilter}}
                 {{15311959057 | formatPhone}}
                 {{123123123123132 | formatBank}}
@@ -91,6 +91,9 @@
         },
         methods: {
             ...mapActions("user", ["changeUserInfo", "getRank"]),
+            handleLang() {
+                this.$i18n.locale = this.$i18n.locale === 'zh-CN' ? 'en-US' : 'zh-CN';
+            },
             timeStart() {
 
             },
