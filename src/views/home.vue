@@ -8,11 +8,17 @@
             enter-active-class="animated fadeIn"
             leave-active-class="animated fadeOut">
             <div v-if="show">
-                <span @click="handleLang">{{$t('home.name', {name: 'Jelly'})}}</span>
-                {{1544179366 | timeFilter}}
-                {{15311959057 | formatPhone}}
-                {{123123123123132 | formatBank}}
-                {{5000039 | toThousands}}
+                <p @click="handleLang">
+                    i18n国际化：
+                    {{$t('home.name', {name: 'Jelly'})}}
+                </p>
+                <p>
+                    vue过滤器：<br/>
+                    时间戳：{{1544179366 | timeFilter}}<br/>
+                    手机格式化：{{15311959057 | formatPhone}}<br/>
+                    银行卡格式化：{{123123123123132 | formatBank}}<br/>
+                    千分位分隔符：{{5000039 | toThousands}}
+                </p>
                 <count-down
                     v-on:start_callback="timeStart()"
                     v-on:end_callback="timeEnd()"
@@ -26,7 +32,10 @@
                     :minutesTxt="':'"
                     :secondsTxt="''"
                 ></count-down>
-                反向代理：{{rank.ok?'成功':'失败'}}
+                <p>
+                    反向代理：
+                    {{rank.ok?'成功':'失败'}}
+                </p>
             </div>
         </transition>
         <div>
@@ -138,6 +147,7 @@
         flex-flow: column;
         align-items: center;
         text-align: center;
+        line-height: 1.2;
     }
 
     .dialog-content {
