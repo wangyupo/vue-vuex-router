@@ -63,8 +63,32 @@ Tips：如果需要使用 px 作为单位，可以把 PX 大写，或者在后�
 
 1、命名
 
-文件命名采用小写驼峰，如：countDown.vue 为一个倒计时组件，home.vue 为首页。
+文件命名:
 
+```
+采用小写驼峰，如：countDown.vue 为一个倒计时组件，home.vue 为首页。
+```
+
+变量命名：
+```
+常量——全大写+下划线，如：
+
+let IMAGE_SERVER = 'http://img.alibaba.com';
+let MAX_LENGTH = 200;
+
+变量——小驼峰式命名法，如：
+let maxCount = 10;
+let tableTitle = 'LoginTable';
+
+全局变量——g+变量名，如：
+var gConfig = {
+   a:1,
+   b:2
+};
+
+私有变量——下划线+变量名，如：
+let _name = '小明';
+```
 2、样式
 
 样式统一在 style 文件夹里维护
