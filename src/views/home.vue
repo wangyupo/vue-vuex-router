@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png">
+        <img @click="openDialog" alt="Vue logo" src="../assets/logo.png">
         <HelloWorld msg="Welcome to Your Vue.js App"/>
         <p @click="changeUserInfo(233)">
             vuex示例：
@@ -51,9 +51,9 @@
             浮点数运算：
             0.1+0.2={{number | formatFloat(2)}}
         </p>
-        <Dialog v-model="showDialog" :showClose="true">
-            <div class="dialog-content">
-                this is dialog content!
+        <Dialog :isVisible="isVisible" @close="closeDialog">
+            <div>
+                123
             </div>
         </Dialog>
     </div>
@@ -76,13 +76,14 @@
         components: {
             HelloWorld,
             CountDown,
-            Dialog,
+            Dialog
         },
         data() {
             return {
                 showDialog: false,
                 show: false,
-                num: 0
+                num: 0,
+                isVisible: false
             }
         },
         computed: {
@@ -140,6 +141,12 @@
 
                 // 开始补间动画
                 animate();
+            },
+            openDialog() {
+                this.isVisible = true;
+            },
+            closeDialog() {
+                this.isVisible = false;
             }
         }
     };
