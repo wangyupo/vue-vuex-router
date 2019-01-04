@@ -59,6 +59,8 @@ Tips：如果需要使用 px 作为单位，可以把 PX 大写，或者在后�
 
 [qrcodeJs - 生成二维码](https://www.jianshu.com/p/2e5e2f5a091c)
 
+[Animate.css](https://daneden.github.io/animate.css/)
+
 ## 推荐规范
 
 1、命名
