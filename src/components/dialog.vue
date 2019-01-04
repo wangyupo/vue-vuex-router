@@ -1,7 +1,7 @@
 <template>
     <transition
-        enter-active-class="animated fadeIn"
-        leave-active-class="animated fadeOut">
+        enter-active-class="animated bounceIn"
+        leave-active-class="animated bounceOut">
         <div class="m-dialog" v-if="visible">
             <div class="m-dialog-container">
                 <slot></slot>
