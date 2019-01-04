@@ -1,13 +1,20 @@
 <template>
-    <transition
-        enter-active-class="animated bounceIn"
-        leave-active-class="animated bounceOut">
-        <div class="m-dialog" v-if="visible">
-            <div class="m-dialog-container">
-                <slot></slot>
-            </div>
+    <!-- 全部动画 -->
+    <!--<transition-->
+        <!--enter-active-class="animated bounceIn"-->
+        <!--leave-active-class="animated bounceOut">-->
+        <!--<div class="m-dialog" v-if="visible">-->
+            <!--<div :class="['m-dialog-container', visible === true?'animated bounceIn':'animated bounceOut']">-->
+                <!--<slot></slot>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</transition>-->
+    <!-- 只有弹出框动画 -->
+    <div class="m-dialog" v-if="visible">
+        <div :class="['m-dialog-container', visible === true?'animated bounceIn':'animated bounceOut']">
+            <slot></slot>
         </div>
-    </transition>
+    </div>
 </template>
 
 <script>
@@ -47,8 +54,11 @@
 <style scoped lang="scss">
     .m-dialog {
         @include modalbg();
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &-container {
-            @include ct();
+            //@include ct();        /* 在只有弹出框动画的情况下，使用animate.css，会导致dialog定位出现偏移，所以需要flex布局来实现上下垂直居中 */
             z-index: 1;
             min-width: 300px;
             min-height: 180px;
