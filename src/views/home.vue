@@ -4,7 +4,7 @@
             vuex示例：
             {{getUserInfo}}
         </p>
-        <p>
+        <p @click="openDialog">
             iconfont:
             <i class="iconfont icon-weibo"></i>
         </p>
@@ -49,6 +49,11 @@
             浮点数运算：
             0.1+0.2={{number | formatFloat(2)}}
         </p>
+        <Dialog :isVisible="isVisible" @close="closeDialog">
+            <div>
+                123
+            </div>
+        </Dialog>
     </div>
 </template>
 
@@ -67,13 +72,14 @@
         name: "home",
         components: {
             CountDown,
-            Dialog,
+            Dialog
         },
         data() {
             return {
                 showDialog: false,
                 show: false,
-                num: 0
+                num: 0,
+                isVisible: false
             }
         },
         computed: {
@@ -137,6 +143,12 @@
 
                 // 开始补间动画
                 animate();
+            },
+            openDialog() {
+                this.isVisible = true;
+            },
+            closeDialog() {
+                this.isVisible = false;
             }
         }
     };
