@@ -48,6 +48,9 @@
                 if (e.target.className === 'm-dialog-wrap') this.closeDialog();
             })
         },
+        beforeDestroy() {
+            document.removeEventListener('click');
+        },
         methods: {
             closeDialog() {
                 this.$emit('close');
