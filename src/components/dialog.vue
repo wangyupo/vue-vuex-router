@@ -88,7 +88,6 @@
             justify-content: center;
             align-items: center;
             .dialog {
-                //@include ct();
                 z-index: 2000;
                 min-width: 300px;
                 min-height: 180px;
