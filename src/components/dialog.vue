@@ -1,16 +1,4 @@
 <template>
-    <!-- 全部动画 -->
-    <!--<transition-->
-        <!--enter-active-class="animated bounceIn"-->
-        <!--leave-active-class="animated bounceOut">-->
-        <!--<div class="m-dialog" v-if="visible">-->
-            <!--<div :class="['m-dialog-container', visible === true?'animated bounceIn':'animated bounceOut']">-->
-                <!--<slot></slot>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</transition>-->
-    <!--:class="['dialog', visible === true?'animated bounceIn':'animated bounceOut']"-->
-    <!-- 只有弹出框动画 -->
     <div class="m-dialog">
         <transition
             enter-active-class="animated fadeIn"
@@ -23,7 +11,7 @@
             leave-active-class="animated bounceOut"
         >
             <div class="m-dialog-wrap" v-show="visible">
-                <div :class="['dialog']">
+                <div class="dialog">
                     <slot></slot>
                 </div>
             </div>
@@ -57,7 +45,7 @@
             }
         },
         created() {
-            document.addEventListener('click',(e) => {
+            document.addEventListener('click', (e) => {
                 if (e.target.className === 'm-dialog-wrap') this.closeDialog();
             })
         },
@@ -84,11 +72,8 @@
             bottom: 0;
             left: 0;
             outline: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include fct();
             .dialog {
-                //@include ct();
                 z-index: 2000;
                 min-width: 300px;
                 min-height: 180px;
