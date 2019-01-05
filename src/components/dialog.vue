@@ -23,7 +23,6 @@
     import animate from 'animate.css';
 
     export default {
-        name: "dialog",
         props: {
             isVisible: {
                 type: Boolean,
