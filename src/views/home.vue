@@ -49,7 +49,7 @@
             浮点数运算：
             0.1+0.2={{number | formatFloat(2)}}
         </p>
-        <Dialog :isVisible="isVisible" @close="closeDialog">
+        <Dialog :isVisible="isVisible" :showMask="true" @close="closeDialog">
             <div>
                 123
             </div>
