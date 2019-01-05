@@ -35,7 +35,7 @@
     import animate from 'animate.css';
 
     export default {
-        name: "dialog2",
+        name: "dialog",
         props: {
             isVisible: {
                 type: Boolean,
