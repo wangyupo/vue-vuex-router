@@ -49,7 +49,9 @@
             })
         },
         beforeDestroy() {
-            document.removeEventListener('click');
+            document.removeEventListener('click', (e) => {
+                if (e.target.className === 'm-dialog-wrap') this.closeDialog();
+            });
         },
         methods: {
             closeDialog() {
