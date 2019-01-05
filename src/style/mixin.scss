@@ -24,6 +24,13 @@
     margin-left: -$width/2;
 }
 
+//flex上下左右剧中
+@mixin fct() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 //定位上下居中
 @mixin tb {
     position: absolute;
@@ -31,11 +38,23 @@
     transform: translateY(-50%);
 }
 
+//flex上下剧中
+@mixin ftb {
+    display: flex;
+    align-items: center;
+}
+
 //定位左右居中
 @mixin lr {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+//flex左右剧中
+@mixin flr() {
+    display: flex;
+    justify-content: center;
 }
 
 //宽高
