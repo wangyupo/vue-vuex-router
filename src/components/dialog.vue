@@ -73,10 +73,12 @@
     .m-dialog {
         &-mask {
             @include modalbg();
+            z-index: 1999;
         }
         &-wrap {
             position: fixed;
             overflow: auto;
+            z-index: 1999;
             top: 0;
             right: 0;
             bottom: 0;
@@ -87,7 +89,7 @@
             align-items: center;
             .dialog {
                 //@include ct();
-                z-index: 1;
+                z-index: 2000;
                 min-width: 300px;
                 min-height: 180px;
                 background-color: #fff;
