@@ -86,9 +86,19 @@
     background-image: url("./images/"+ $url + "@2x.png");
 
     @media only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (min-device-pixel-ratio: 2) {
+    only screen and (min-device-pixel-ratio: 2) {
         background-image: url("./images/"+ $url + "@3x.png");
     }
+}
+
+//多行超出省略号
+@mixin ellipsis($line: 2, $line-height: 1.2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    line-height: $line-height;
 }
 
 @mixin modalbg {
@@ -114,5 +124,176 @@
         width: 0;
         height: 0;
         visibility: hidden;
+    }
+}
+
+/* 1像素边框 */
+
+@mixin border($width: 1px, $border-color: #999, $border-radius: initial) {
+    position: relative;
+
+    /* 默认 */
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: $width solid $border-color;
+        border-radius: $border-radius;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 设备像素比为 2 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2) {
+        &:after {
+            width: 200%;
+            height: 200%;
+            transform: scale(0.5);
+            transform-origin: left top;
+        }
+    }
+
+    /* 设备像素比为 3 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 3),
+    only screen and (min-device-pixel-ratio: 3) {
+        &:after {
+            width: 300%;
+            height: 300%;
+            transform: scale(0.333333);
+            transform-origin: left top;
+        }
+    }
+}
+
+@mixin border-bottom($height: 1px, $width: 100%, $border-color: #999) {
+    position: relative;
+
+    /* 默认 */
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: $width;
+        height: $height;
+        background-color: $border-color;
+    }
+
+    /* 设备像素比为 2 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2) {
+        &:after {
+            background-color: $border-color;
+            transform: scaleY(0.5);
+        }
+    }
+
+    /* 设备像素比为 3 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 3),
+    only screen and (min-device-pixel-ratio: 3) {
+        &:after {
+            background-color: $border-color;
+            transform: scaleY(0.333333);
+        }
+    }
+}
+
+@mixin border-top($height: 1px, $width: 100%, $border-color: #999) {
+    position: relative;
+
+    /* 默认 */
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: $width;
+        height: $height;
+        background-color: $border-color;
+    }
+
+    /* 设备像素比为 2 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2) {
+        &:after {
+            transform: scaleY(0.5);
+        }
+    }
+
+    /* 设备像素比为 3 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 3),
+    only screen and (min-device-pixel-ratio: 3) {
+        &:after {
+            transform: scaleY(0.333333);
+        }
+    }
+}
+
+@mixin border-right($height: 100%, $width: 1px, $border-color: #999) {
+    position: relative;
+
+    /* 默认 */
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: $width;
+        height: $height;
+        background-color: $border-color;
+    }
+
+    /* 设备像素比为 2 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2) {
+        &:after {
+            transform: scaleX(0.5);
+        }
+    }
+
+    /* 设备像素比为 3 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 3),
+    only screen and (min-device-pixel-ratio: 3) {
+        &:after {
+            transform: scaleX(0.333333);
+        }
+    }
+}
+
+@mixin border-left($height: 100%, $width: 1px, $border-color: #999) {
+    position: relative;
+
+    /* 默认 */
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: $width;
+        height: $height;
+        background-color: $border-color;
+    }
+
+    /* 设备像素比为 2 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2) {
+        &:after {
+            transform: scaleX(0.5);
+        }
+    }
+
+    /* 设备像素比为 3 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 3),
+    only screen and (min-device-pixel-ratio: 3) {
+        &:after {
+            transform: scaleX(0.333333);
+        }
     }
 }
