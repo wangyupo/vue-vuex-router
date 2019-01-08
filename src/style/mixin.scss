@@ -91,7 +91,7 @@
     }
 }
 
-//多行超出省略号
+//多行超出省略号
 @mixin ellipsis($line: 2, $line-height: 1.2) {
     overflow: hidden;
     text-overflow: ellipsis;
