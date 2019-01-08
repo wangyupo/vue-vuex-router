@@ -86,7 +86,7 @@
     background-image: url("./images/"+ $url + "@2x.png");
 
     @media only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (min-device-pixel-ratio: 2) {
+    only screen and (min-device-pixel-ratio: 2) {
         background-image: url("./images/"+ $url + "@3x.png");
     }
 }
