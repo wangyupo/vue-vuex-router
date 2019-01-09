@@ -1,10 +1,17 @@
-// 全局变量
+/**
+ * 全局变量
+ * 命名规范：lg-大号、md-中号、base-基本号、sm-小号、mini-超小号
+ */
 
-$text-title-size: 18px;
-$text-btn-size: 16px;
-$text-common-size: 14px;
-$text-info-size: 12px;
-$text-tip-size: 10px;
+$font-weight-base: 400;
+
+$border-color-base: rgba(101, 135, 248, 0.36);
+
+$font-size-lg: 18px;
+$font-size-md: 16px;
+$font-size-base: 14px;
+$font-size-sm: 12px;
+$font-size-mini: 10px;
 
 $color-important: #222222;
 $color-common: #606060;
