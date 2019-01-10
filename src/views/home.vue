@@ -51,6 +51,15 @@
             浮点数运算：
             0.1+0.2={{number | formatFloat(2)}}
         </p>
+        <p>
+            发送验证码：
+            <button @click="startCountdown">
+                <CountDown2 v-if="counting" :time="6000" @end="handleCountdownEnd">
+                    <template slot-scope="props">{{ props.totalSeconds }} 秒后重试</template>
+                </CountDown2>
+                <span v-else>获取验证码</span>
+            </button>
+        </p>
         <Dialog :isVisible="isVisible" :showMask="true" @close="closeDialog">
             <div>
                 123
@@ -63,6 +72,7 @@
     // @ is an alias to /src
     import HelloWorld from "@/components/helloWorld.vue";
     import CountDown from "@/components/countDown.vue";
+    import CountDown2 from "@/components/countDown.js"
     import Dialog from "@/components/dialog.vue";
     import {mapState, mapMutations, mapActions, mapGetters} from "vuex";
     import env from "@/config/env";
@@ -76,6 +86,7 @@
         components: {
             HelloWorld,
             CountDown,
+            CountDown2,
             Dialog
         },
         data() {
@@ -83,7 +94,8 @@
                 showDialog: false,
                 show: false,
                 num: 0,
-                isVisible: false
+                isVisible: false,
+                counting: false
             }
         },
         computed: {
@@ -147,7 +159,13 @@
             },
             closeDialog() {
                 this.isVisible = false;
-            }
+            },
+            startCountdown: function () {
+                this.counting = true;
+            },
+            handleCountdownEnd: function () {
+                this.counting = false;
+            },
         }
     };
 </script>
