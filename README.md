@@ -116,5 +116,9 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 
 布局在 layouts 文件夹中，然后在 App.vue 中引入，放在了路由的最外层，充当整个项目的公共布局，如：页眉、页脚等。
 
+9、参考
+
+[凹凸实验室前端代码规范](https://guide.aotu.io/docs/)
+
 ### 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
