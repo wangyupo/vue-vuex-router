@@ -5,7 +5,7 @@ import store from './store'
 import i18n from './config/lang'
 import filters from './filters'
 
-import Toast from './components/toast/toast'
+import Toast from './components/toast/index'
 Vue.use(Toast);
 
 Vue.config.productionTip = false

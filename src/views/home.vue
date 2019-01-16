@@ -60,6 +60,9 @@
                 <span v-else>获取验证码</span>
             </button>
         </p>
+        <p @click="handleToast">
+            Toast插件
+        </p>
         <Dialog :isVisible="isVisible" :showMask="true" @close="closeDialog">
             <div>
                 123
@@ -116,9 +119,6 @@
             // }, 6000)
             // tweenJs示例
             this.tweenJS();
-            this.$toast('Hello Vue Plugin', 1500)
-            this.$toast('Hello Vue Plugin2', 1500)
-            this.$toast('Hello Vue Plugin3', 1500)
         },
         methods: {
             ...mapActions("user", ["changeUserInfo", "getRank"]),
@@ -169,6 +169,9 @@
             handleCountdownEnd: function () {
                 this.counting = false;
             },
+            handleToast() {
+                this.$toast('Hello Vue Plugin', 'success')
+            }
         }
     };
 </script>

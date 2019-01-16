@@ -1,45 +1,50 @@
 <template>
     <transition name="fade">
-        <div class="toast" v-show="show">{{message}}</div>
+        <div class="m-toast" v-show="show">
+            <span v-if="type === 'success'">成功</span>
+            {{message}}
+        </div>
     </transition>
 </template>
 
 <script>
     export default {
-        data () {
+        data() {
             return {
                 show: false,
-                message: ''
+                message: '',
+                type: ''
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    .toast {
+    .m-toast {
         position: fixed;
-        top: 40%;
+        top: 50%;
         left: 50%;
-        margin-left: -15vw;
-        padding: 2vw;
-        width: 30vw;
-        font-size: 4vw;
+        transform: translate(-50%, -50%);
+        z-index: 2001;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 5px;
         color: #fff;
         text-align: center;
         background-color: rgba(0, 0, 0, 0.8);
-        border-radius: 5vw;
-        z-index: 999;
     }
 
-    .fade-enter-active, .fade-leave-active{
+    .fade-enter-active, .fade-leave-active {
         transition: 0.3s ease-out;
     }
+
     .fade-enter {
         opacity: 0;
-        transform: scale(1.2);
     }
+
     .fade-leave-active {
         opacity: 0;
-        transform: scale(0.8);
     }
 </style>
