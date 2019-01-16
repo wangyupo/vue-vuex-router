@@ -117,7 +117,7 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 
 而在Vuex（store）中，action就负责取数据（请求接口），getter负责处理数据返回相应格式，mutation负责改变数据（即改变数据库），而state就是那个数据库。
 
-即Vuex就是单纯做数据处理的，它应该与页面分开，保持数据的独立和单向性。
+即Vuex就是单纯做数据处理的，它应该与页面分开，保持数据的独立和单向性。
 ```
 
 5、格式化方法
@@ -130,7 +130,7 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 
 它的使用方法是，在.vue文件中 {{$t('name')}}
 
-在js中，获取当前语言的方法是，console.log(this.$18n.local)，设置语言的方法同样 this.$18n.local = 'zh-CN'
+在js中，获取当前语言的方法是，console.log(this.$i18n.locale)，设置语言的方法同样 this.$18n.local = 'zh-CN'
 
 7、vue-router
 
@@ -139,6 +139,10 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 8、布局
 
 布局在 layouts 文件夹中，然后在 App.vue 中引入，放在了路由的最外层，充当整个项目的公共布局，如：页眉、页脚等。
+
+9、参考
+
+[凹凸实验室前端代码规范](https://guide.aotu.io/docs/)
 
 ### 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
