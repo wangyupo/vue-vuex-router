@@ -31,6 +31,7 @@ yarn push
         - lang              // 语言目录
     - fliters           // 公共过滤器
     - container         // 外层布局
+    - router            // 路由
     - store             // Vuex管理目录
     - style             // 公共样式目录
     - views             // 页面目录
