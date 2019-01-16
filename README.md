@@ -139,5 +139,25 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 之后，你改动任何一个地方，就能方便的在手机上看到改动了。也可以将这个地址发给同一网络环境的其他人，他们也就可以看到效果了。
 ```
 
+3、我怎么在组件中引入图片？
+
+```
+图片目录在src/assets下，在组件中引入方式如下：
+<img :src="reuqire('@/assets/img/demo.png')" alt="" />
+
+Tips：建议动态引入，避免调整页面带来的路径问题
+```
+
+4、我怎么无视层级导入css？
+
+```
+使用 ~
+
+@import "~@/assets/iconfont/iconfont.css";
+
+原理：
+CSS loader 会把把非根路径的url解释为相对路径， 加~前缀才会解释成模块路径。
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
