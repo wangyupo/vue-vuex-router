@@ -112,7 +112,6 @@
             // }, 6000)
             // tweenJs示例
             this.tweenJS();
-            console.log(this.$i18n.locale)
         },
         methods: {
             ...mapActions("user", ["changeUserInfo", "getRank"]),
