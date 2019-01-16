@@ -2,16 +2,16 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // 正常加载
-// import Home from '../views/home.vue'
-// import About from '../views/About.vue'
+// import Home from '../views/home'
+// import About from '../views/About'
 
 // 按需（懒）加载（vue实现）
-const Home = () => import( /* webpackChunkName: "home" */ '../views/home.vue')
-const About = () => import( /* webpackChunkName: "about" */ '../views/about.vue')
+const Home = () => import( /* webpackChunkName: "home" */ '../views/home')
+const About = () => import( /* webpackChunkName: "about" */ '../views/about')
 
 // 按需（懒）加载（webpack实现）
-// const Home = r => require.ensure([], () => r(require('../views/home.vue')), 'home')
-// const About = r => require.ensure([], () => r(require('../views/About.vue')), 'about')
+// const Home = r => require.ensure([], () => r(require('../views/home')), 'home')
+// const About = r => require.ensure([], () => r(require('../views/About')), 'about')
 
 Vue.use(Router)
 
