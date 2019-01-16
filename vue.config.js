@@ -1,5 +1,6 @@
 // vue.config.js
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function resolve(dir) {
     return path.join(__dirname, dir)
@@ -39,7 +40,9 @@ module.exports = {
     configureWebpack: config => {
         if (process.env.NODE_ENV === 'production') {
             return {
-                plugins: []
+                plugins: [
+                    new BundleAnalyzerPlugin()
+                ]
             }
         }
     },
