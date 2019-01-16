@@ -1,6 +1,6 @@
 ## 说明
 
-vueCli3搭建的vue-vuex-router开发模版，PC、Mobile两个分支开箱即用，支持scss、vuex、axios、多语言、过滤器、仓库快速提交等
+vueCli3项目脚手架
 
 ## 常用命令
 
