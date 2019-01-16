@@ -120,5 +120,13 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 
 [凹凸实验室前端代码规范](https://guide.aotu.io/docs/)
 
+### 常见问题
+
+1、yarn push 不能用怎么办？
+
+```
+命令行工具切到项目目录下，执行 chmod 755 push.sh
+```
+
 ### 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
