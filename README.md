@@ -1,4 +1,6 @@
-# 用 Vue Cli 3 搭建的项目脚手架
+## 说明
+
+vueCli3搭建的vue-vuex-router开发模版，PC、Mobile两个分支开箱即用，支持scss、vuex、axios、多语言、过滤器、仓库快速提交等
 
 ## 常用命令
 
@@ -7,13 +9,10 @@
 yarn install
 
 项目启动
-yarn run serve
+yarn serve
 
 项目打包
-yarn run build
-
-修复ESLint
-yarn run lint
+yarn build
 
 提交代码
 yarn push
@@ -120,7 +119,7 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 
 [凹凸实验室前端代码规范](https://guide.aotu.io/docs/)
 
-### 常见问题
+## 常见问题
 
 1、yarn push 不能用怎么办？
 
