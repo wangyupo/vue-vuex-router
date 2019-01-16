@@ -116,6 +116,9 @@
             // }, 6000)
             // tweenJs示例
             this.tweenJS();
+            this.$toast('Hello Vue Plugin', 1500)
+            this.$toast('Hello Vue Plugin2', 1500)
+            this.$toast('Hello Vue Plugin3', 1500)
         },
         methods: {
             ...mapActions("user", ["changeUserInfo", "getRank"]),

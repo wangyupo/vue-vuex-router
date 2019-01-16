@@ -5,6 +5,9 @@ import store from './store'
 import i18n from './config/lang'
 import filters from './filters'
 
+import Toast from './components/toast/toast'
+Vue.use(Toast);
+
 Vue.config.productionTip = false
 
 // 如果是非线上环境，加载 VConsole（移动端适用）
