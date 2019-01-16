@@ -14,7 +14,7 @@ yarn serve
 项目打包
 yarn build
 
-查看打包体积
+分析打包体积
 yarn analyz
 
 提交代码
