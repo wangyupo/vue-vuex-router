@@ -1,4 +1,6 @@
-# 用 Vue Cli 3 搭建的项目脚手架（移动端）
+## 说明
+
+vueCli3项目脚手架
 
 ## 常用命令
 
@@ -7,13 +9,13 @@
 yarn install
 
 项目启动
-yarn run serve
+yarn serve
 
 项目打包
-yarn run build
+yarn build
 
-修复ESLint
-yarn run lint
+分析打包体积
+yarn analyz
 
 提交代码
 yarn push
@@ -30,8 +32,9 @@ yarn push
     - config            // 配置文件目录
         - env.js            // 环境配置
         - lang              // 语言目录
-    - fliters           // 过滤器
-    - container         // 外层布局
+    - fliters           // 公共过滤器
+    - layouts           // 外层布局
+    - router            // 路由
     - store             // Vuex管理目录
     - style             // 公共样式目录
     - views             // 页面目录
@@ -144,5 +147,41 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 
 [凹凸实验室前端代码规范](https://guide.aotu.io/docs/)
 
-### 更多自定义配置
+## 常见问题
+
+1、yarn push 不能用怎么办？
+
+```
+命令行工具切到项目目录下，执行 chmod 755 push.sh
+```
+
+2、如何用手机调试，或者让别人看到？
+
+```
+项目启动的时候已经是你的本地ip了，只需要将手机和电脑连在同一个网络环境下（如：连同一个WIFI），复制地址栏的地址发送给手机即可访问。
+
+之后，你改动任何一个地方，就能方便的在手机上看到改动了。也可以将这个地址发给同一网络环境的其他人，他们也就可以看到效果了。
+```
+
+3、我怎么在组件中引入图片？
+
+```
+图片目录在src/assets下，在组件中引入方式如下：
+<img :src="reuqire('@/assets/img/demo.png')" alt="" />
+
+Tips：建议动态引入，避免调整页面带来的路径问题
+```
+
+4、我怎么无视层级导入css？
+
+```
+使用 ~
+
+@import "~@/assets/iconfont/iconfont.css";
+
+原理：
+CSS loader 会把把非根路径的url解释为相对路径，加~前缀才会解释成模块路径。
+```
+
+## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).

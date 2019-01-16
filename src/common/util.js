@@ -311,25 +311,3 @@ function maxItemInObjArr(array, item) {
     }));
     return max;
 }
-
-/**
- * 获取url后参数
- * @returns {Object}
- * @constructor
- */
-export const parseParam = (url = window.location.href) => {
-    const query = url.indexOf('?') > -1 ? url.split('?')[1] : ''; //获取url中"?"符后的字串
-    const data = {};
-    const strs = query.split("&");
-    for (let i = 0; i < strs.length; i++) {
-        data[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
-    }
-    // console.log(111, data)
-    return data;
-};
-
-export const getUrlParam = (name, url) => {
-    url = url || window.location.href;
-    let data = parseParam(url);
-    return data[name];
-}

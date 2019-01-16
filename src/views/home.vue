@@ -58,6 +58,9 @@
                 <span v-else>获取验证码</span>
             </button>
         </p>
+        <p @click="handleToast">
+            Toast插件
+        </p>
         <Dialog :isVisible="isVisible" :showMask="true" @close="closeDialog">
             <div>
                 123
@@ -168,6 +171,9 @@
             handleCountdownEnd: function () {
                 this.counting = false;
             },
+            handleToast() {
+                this.$toast('Hello Vue Plugin', 'success')
+            }
         }
     };
 </script>

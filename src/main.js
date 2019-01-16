@@ -6,13 +6,14 @@ import i18n from './config/lang'
 import filters from './filters'
 import 'amfe-flexible'
 
-// lodash函数库
-import lodash from 'lodash'
-Vue.prototype._ = lodash        // this._
+import Toast from './components/toast/index'
+Vue.use(Toast);
 
 // 消除 click 移动浏览器300ms延迟
 import attachFastClick from 'fastclick'
 attachFastClick.attach(document.body)
+
+Vue.config.productionTip = false
 
 // 如果是非线上环境，加载 VConsole（移动端适用）
 // if (process.env.NODE_ENV !== 'production') {

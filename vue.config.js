@@ -1,10 +1,14 @@
 // vue.config.js
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function resolve(dir) {
     return path.join(__dirname, dir)
-};
+}
 module.exports = {
+    // 使用运行时编译器的 Vue 构建版本
+    runtimeCompiler: true,
+
     // 开启生产环境SourceMap
     productionSourceMap: false,
 
@@ -37,9 +41,14 @@ module.exports = {
     },
 
     configureWebpack: config => {
+        // config.resolve.alias
+        //     .set('vue$', 'vue/dist/vue.esm.js')
+        // console.log(config)
         if (process.env.NODE_ENV === 'production') {
             return {
-                plugins: []
+                plugins: [
+                    new BundleAnalyzerPlugin()
+                ]
             }
         }
     },
