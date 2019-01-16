@@ -30,7 +30,7 @@ yarn push
         - env.js            // 环境配置
         - lang              // 语言目录
     - fliters           // 公共过滤器
-    - container         // 外层布局
+    - layouts           // 外层布局
     - router            // 路由
     - store             // Vuex管理目录
     - style             // 公共样式目录
