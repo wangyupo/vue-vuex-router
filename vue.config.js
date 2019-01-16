@@ -3,7 +3,7 @@ const path = require('path');
 
 function resolve(dir) {
     return path.join(__dirname, dir)
-};
+}
 module.exports = {
     // 开启生产环境SourceMap
     productionSourceMap: false,
