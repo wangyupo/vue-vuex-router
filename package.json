@@ -5,7 +5,7 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "analyz": "npm_config_report=true npm run build"
+        "analyz": "npm_config_report=true vue-cli-service build"
     },
     "dependencies": {
         "animate.css": "^3.7.0",
