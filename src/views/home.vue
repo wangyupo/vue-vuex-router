@@ -73,7 +73,7 @@
     // @ is an alias to /src
     import CountDown from "@/components/countDown.vue";
     import CountDown2 from "@/components/countDown.js"
-    import Dialog from "@/components/dialog.vue";
+    import Dialog from "@/components/dialog";
     import {mapState, mapMutations, mapActions, mapGetters} from "vuex";
     import env from "@/config/env";
     import {getUserInfo} from "@/api/common";

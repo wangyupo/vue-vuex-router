@@ -41,9 +41,6 @@ module.exports = {
     },
 
     configureWebpack: config => {
-        // config.resolve.alias
-        //     .set('vue$', 'vue/dist/vue.esm.js')
-        // console.log(config)
         if (process.env.NODE_ENV === 'production') {
             return {
                 plugins: [

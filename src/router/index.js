@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import {sessionSetItem} from '../common/util'
 
 // 按需（懒）加载
-const Home = () => import( /* webpackChunkName: "home" */ '../views/home.vue')
-const My = () => import( /* webpackChunkName: "home" */ '../views/my.vue')
+const Home = () => import( /* webpackChunkName: "home" */ '../views/home')
+const My = () => import( /* webpackChunkName: "home" */ '../views/my')
 
 Vue.use(Router)
 
