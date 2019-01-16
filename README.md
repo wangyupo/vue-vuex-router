@@ -156,7 +156,7 @@ Tips：建议动态引入，避免调整页面带来的路径问题
 @import "~@/assets/iconfont/iconfont.css";
 
 原理：
-CSS loader 会把把非根路径的url解释为相对路径， 加~前缀才会解释成模块路径。
+CSS loader 会把把非根路径的url解释为相对路径，加~前缀才会解释成模块路径。
 ```
 
 ## 更多自定义配置
