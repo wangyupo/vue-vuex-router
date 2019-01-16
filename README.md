@@ -128,5 +128,5 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 命令行工具切到项目目录下，执行 chmod 755 push.sh
 ```
 
-### 更多自定义配置
+## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
