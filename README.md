@@ -166,7 +166,7 @@ src/components/toast/toast.vue
 修改此文件即可，更多修改可以查找 "vue插件" 资料。
 ```
 
-6、我想把4个空格改成2个怎么改？
+6、我想把格式化后4个空格改成2个怎么改？
 
 ```
 .editorconfig 中 indent_size = 2 即可
