@@ -159,5 +159,12 @@ Tips：建议动态引入，避免调整页面带来的路径问题
 CSS loader 会把把非根路径的url解释为相对路径，加~前缀才会解释成模块路径。
 ```
 
+5、我想修改Toast的样式怎么办？
+
+```
+src/components/toast/toast.vue 
+修改此文件即可，更多修改可以查找 "vue插件" 资料。
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
