@@ -1,4 +1,3 @@
-
 //定位全屏
 @mixin allcover {
     position: absolute;
@@ -123,6 +122,16 @@
         width: 0;
         height: 0;
         visibility: hidden;
+    }
+}
+
+/* 倍图 */
+@mixin bg-image($url) {
+    background-image: url($url + "@2x.png");
+    /* 设备像素比为 3 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 3),
+    only screen and (min-device-pixel-ratio: 3) {
+        background-image: url($url + "@3x.png")
     }
 }
 
