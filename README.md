@@ -163,7 +163,32 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 之后，你改动任何一个地方，就能方便的在手机上看到改动了。也可以将这个地址发给同一网络环境的其他人，他们也就可以看到效果了。
 ```
 
-3、我怎么在组件中引入图片？
+3、我要开发移动端H5怎么做？
+
+```
+1、切换到mobile_template分支，这是为移动端开发专门准备的模版，执行命令：git checkout mobile_template。
+2、查看设计稿的宽度，如750px、375px。
+3、将设计稿宽度/10，然后修改 package.json 中的 postcss-px2rem 下的 remUnit
+4、样式、css等就可以按照设计稿的大小用px来写了
+
+例子：
+"postcss": {
+    "plugins": {
+        "autoprefixer": {},
+        "postcss-px2rem": {
+            "remUnit": 37.5         // 修改这个值为"设计稿宽度/10"
+        }
+    }
+},
+```
+
+4、我想把格式化后4个空格改成2个怎么改？
+
+```
+.editorconfig 中 indent_size = 2 即可
+```
+
+5、我怎么在组件中引入图片？
 
 ```
 图片目录在src/assets下，在组件中引入方式如下：
@@ -172,18 +197,19 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 Tips：建议动态引入，避免调整页面带来的路径问题
 ```
 
-4、我怎么无视层级导入css？
+6、我怎么无视层级导入css，或是引入图片？
 
 ```
 使用 ~
 
 @import "~@/assets/iconfont/iconfont.css";
+background: url("~@/assets/img/xxx.png");
 
 原理：
 CSS loader 会把把非根路径的url解释为相对路径，加~前缀才会解释成模块路径。
 ```
 
-5、我想修改Toast的样式怎么办？
+7、我想修改Toast的样式怎么办？
 
 ```
 src/components/toast/toast.vue 

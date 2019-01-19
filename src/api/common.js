@@ -4,4 +4,4 @@
 import Request from './request';
 
 /* Common */
-export const rankGender = data => Request.get('api/ranking/gender', data);
+export const rankGender = data => Request.get('/ranking/gender', data);
