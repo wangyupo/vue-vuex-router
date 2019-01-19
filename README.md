@@ -195,7 +195,9 @@ src/components/toast/toast.vue
 8、我想在本地和服务端调试怎么弄？
 
 ```
-修改 vue.config.js 中的 proxy 为你的服务端地址即可
+修改 vue.config.js 中的 proxy 为你的服务端地址即可，如：
+
+proxy: 'http://xxx.com'
 ```
 
 ## 更多自定义配置
