@@ -192,6 +192,12 @@ src/components/toast/toast.vue
 修改此文件即可，更多修改可以查找 "vue插件" 资料。
 ```
 
+8、我想在本地和服务端调试怎么弄？
+
+```
+修改 vue.config.js 中的 proxy 为你的服务端地址即可
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
