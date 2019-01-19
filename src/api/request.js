@@ -16,8 +16,8 @@ const AJAX = axios.create({
 // 添加请求拦截器
 AJAX.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
-    if (config.url.indexOf('api') != -1) {
-        config.url = `http://${location.host}/` + config.url;           // 自定义反向代理
+    if (process.env.NODE_ENV === 'development') {
+        config.url = `http://${location.host}` + config.url;           // 自定义反向代理
     }
     return config;
 }, function (error) {
