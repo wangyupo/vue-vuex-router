@@ -173,12 +173,13 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 Tips：建议动态引入，避免调整页面带来的路径问题
 ```
 
-6、我怎么无视层级导入css？
+6、我怎么无视层级导入css，或是引入图片？
 
 ```
 使用 ~
 
 @import "~@/assets/iconfont/iconfont.css";
+background: url("~@/assets/img/xxx.png");
 
 原理：
 CSS loader 会把把非根路径的url解释为相对路径，加~前缀才会解释成模块路径。
