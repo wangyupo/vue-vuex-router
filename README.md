@@ -172,6 +172,25 @@ src/components/toast/toast.vue
 .editorconfig 中 indent_size = 2 即可
 ```
 
+7、我要开发移动端H5怎么做？
+
+```
+1、切换到mobile_template分支，这是为移动端开发专门准备的模版，执行命令：git checkout mobile_template。
+2、查看设计稿的宽度，如750px、375px。
+3、将设计稿宽度/10，然后修改 package.json 中的 postcss-px2rem 下的 remUnit
+4、样式、css等就可以按照设计稿的大小用px来写了
+
+例子：
+"postcss": {
+    "plugins": {
+        "autoprefixer": {},
+        "postcss-px2rem": {
+            "remUnit": 37.5         // 修改这个值为"设计稿宽度/10"
+        }
+    }
+},
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
