@@ -216,6 +216,33 @@ src/components/toast/toast.vue
 修改此文件即可，更多修改可以查找 "vue插件" 资料。
 ```
 
+8、我想在本地和服务端调试怎么弄？
+
+```
+修改 vue.config.js 中的 proxy 为你的服务端地址即可，如：
+
+proxy: 'http://xxx.com'
+```
+
+9、我引入了第三方组件，如何修改样式？
+
+```
+有两个方法可以解决这个问题：
+
+方法一：
+在scoped的scss中使用 >>> 或者 /deep/ ，它们是vue提供的"深度作用选择器"，你可以参考 —— https://vue-loader.vuejs.org/zh/guide/scoped-css.html#%E6%B7%B1%E5%BA%A6%E4%BD%9C%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8
+<style scoped>
+    .a >>> .b { /* ... */ }
+    .a /deep/ .b { /* ... */ }
+</style>
+
+方法二：
+单独写一个style，不加scoped，在这里面单独修改
+<style scoped>
+    .a .b { /* ... */ }
+</style>
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
