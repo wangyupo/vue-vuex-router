@@ -311,3 +311,40 @@ function maxItemInObjArr(array, item) {
     }));
     return max;
 }
+
+/**
+ * 判断当前网络环境
+ */
+export const isWifi = () => {
+    try {
+        let wifi = true;
+        let ua = window.navigator.userAgent;
+        let con = window.navigator.connection;
+        // 如果是微信
+        if (/MicroMessenger/.test(ua)) {
+            if (ua.indexOf('WIFI') >= 0) {
+                return true
+            } else {
+                wifi = false
+            }
+            // 如果支持navigator.connection
+        } else if (con) {
+            let network = con.type;
+            if (network !== 'wifi' && network !== '2' && network !== 'unknown') {
+                wifi = false
+            }
+        }
+        return wifi
+    } catch (e) {
+        return false
+    }
+};
+
+/**
+ * 首字母大写
+ * @param str
+ * @returns {string}
+ */
+export const fistLetterUpper = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+};
