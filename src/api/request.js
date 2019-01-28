@@ -1,6 +1,5 @@
 import axios from 'axios';
 import env from '@/config/env';
-import store from '@/store';
 
 const MOCKURL = ''; // mock数据地址
 
