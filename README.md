@@ -219,6 +219,20 @@ proxy: 'http://xxx.com'
 </style>
 ```
 
+10、UI说我移动端的border太粗了，和他UI严重不符，怎么解决？
+
+```
+移动端屏幕像素比(dpr)导致的，如果你开发移动端，我为你准备了现成的1px border，不要使用border: 1px solid #ff6632，而是用：
+
+@include border-bottom();
+@include border-top();
+@include border-left();
+@include border-right();
+@include border();
+
+同时你也可以传入一些配置项来设置border的颜色、粗细等等，详细的请切换到 mobile_template 分支，查看 src/style/mixin.scss 里面的 border 类。
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
