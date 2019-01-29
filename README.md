@@ -233,6 +233,22 @@ proxy: 'http://xxx.com'
 同时你也可以传入一些配置项来设置border的颜色、粗细等等，详细的请切换到 mobile_template 分支，查看 src/style/mixin.scss 里面的 border 类。
 ```
 
+11、在数学运算时，出现了1.1999999999这种无限小数位，我该怎么解决啊？
+
+```
+浮点数运算失精，可以用 number-precision 这个插件，具体使用方法为：
+
+yarn add number-precision
+
+import NP from 'number-precision'
+
+NP.plus(0.1, 0.2)
+
+......
+
+更多使用方法参考官方文档：https://github.com/nefe/number-precision
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
