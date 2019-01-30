@@ -261,8 +261,9 @@ NP.plus(0.1, 0.2)
 银行卡格式化：{{123123123123132 | formatBank}} => 1231 2312 3123 132
 千分位分隔符：{{5000039 | toThousands}} => 5,000,039
 
-看，就是如此方便！向一堆重复方法说Bye Bye吧！
 如果你需要自定义一些方法，可以在 src/filters/index.js 里自己添加，用法和示例一样。
+
+看，就是如此方便！向一堆重复方法说Bye Bye吧！
 
 更多使用方法参考官方文档：https://cn.vuejs.org/v2/guide/filters.html
 ```
