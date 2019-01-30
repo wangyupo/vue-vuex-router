@@ -256,16 +256,14 @@ NP.plus(0.1, 0.2)
 
 因为我们全局混入了过滤器，内置了常用的方法，因此，对待时间戳转日期、手机号中间四位****等要求，我们可以这样做：
 
-下面就是过滤器示例：
-
 时间戳：{{1544179366 | timeFilter}}
 手机格式化：{{15311959057 | formatPhone}}
 银行卡格式化：{{123123123123132 | formatBank}}
 千分位分隔符：{{5000039 | toThousands}}
 
-更多的过滤，或者想自定义一些方法，可以在src/filters/index.js里自己添加，用法和示例一样。
+如果你需要自定义一些方法，可以在src/filters/index.js里自己添加，用法和示例一样。
 
-了解更多，参考官网文档 —— https://cn.vuejs.org/v2/guide/filters.html
+更多使用方法参考官方文档：https://cn.vuejs.org/v2/guide/filters.html
 ```
 
 ## 更多自定义配置
