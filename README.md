@@ -243,6 +243,55 @@ proxy: 'http://xxx.com'
 </style>
 ```
 
+10、UI说我移动端的border太粗了，和他UI严重不符，怎么解决？
+
+```
+移动端屏幕像素比(dpr)导致的，如果你开发移动端，我为你准备了现成的1px border，不要使用border: 1px solid #ff6632，而是用：
+
+@include border-bottom();
+@include border-top();
+@include border-left();
+@include border-right();
+@include border();
+
+同时你也可以传入一些配置项来设置border的颜色、粗细等等，详细的请切换到 mobile_template 分支，查看 src/style/mixin.scss 里面的 border 类。
+```
+
+11、在数学运算时，出现了1.1999999999这种无限小数位，我该怎么解决啊？
+
+```
+浮点数运算失精，可以用 number-precision 这个插件，具体使用方法为：
+
+yarn add number-precision
+
+import NP from 'number-precision'
+
+NP.plus(0.1, 0.2)
+
+......
+
+更多使用方法参考官方文档：https://github.com/nefe/number-precision
+```
+
+12、前端好多日期展示，每次在methods里面处理好麻烦，我又不想修改原数据，有更方便的办法吗？
+
+```
+有！你完全不需要每次写方法处理，只需要在需要<template>模版中用 "| 过滤器" 即可！
+
+因为我们全局混入了过滤器，内置了常用的方法，因此，对待时间戳转日期、隐藏手机号中间四位等要求，我们可以这样做：
+
+时间戳：{{1544179366 | timeFilter}} => 2018-12-07 18:42:46
+手机格式化：{{15311959057 | formatPhone}} => 153****9057
+银行卡格式化：{{123123123123132 | formatBank}} => 1231 2312 3123 132
+千分位分隔符：{{5000039 | toThousands}} => 5,000,039
+
+如果你需要自定义一些方法，可以在 src/filters/index.js 里自己添加，用法和示例一样。
+
+看，就是如此方便！向一堆重复方法说Bye Bye吧！
+
+更多使用方法参考官方文档：https://cn.vuejs.org/v2/guide/filters.html
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
