@@ -33,6 +33,13 @@
                 tabBar: sessionGetItem('tabBar') || 'home'
             };
         },
+        watch: {
+            '$route' (to, from) {
+                if (["home", "my"].includes(to.name)) {
+                    this.tabBar = to.name;
+                }
+            }
+        },
         methods: {
             clickHandler(routerName) {
                 this.tabBar = routerName;
