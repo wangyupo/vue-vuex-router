@@ -38,11 +38,11 @@ const router = new Router({
             }
         }
     }
-})
+});
 
 router.beforeEach((to, from, next) => {
-    sessionSetItem('tabBar', to.name)
+    sessionSetItem('tabBar', to.name);
     return next()
-})
+});
 
 export default router;
