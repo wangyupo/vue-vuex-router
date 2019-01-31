@@ -292,6 +292,24 @@ NP.plus(0.1, 0.2)
 更多使用方法参考官方文档：https://cn.vuejs.org/v2/guide/filters.html
 ```
 
+13、我用你这个框架开发微信公众号，在做微信分享的时候wx.config总是不过，一直报"invalid signature"，后端也找不出毛病来，你给我解决解决吧
+
+```
+vue这样引入sdk
+yarn add weixin-js-sdk
+import wx from 'weixin-js-sdk'
+
+别的先不说，我先给你解决方案：
+1、vue-router用hash模式
+2、wx.config里面的url要动态获取并且encode，直接把这个换上去 encodeURIComponent(location.href.split('#')[0])
+3、wx.config放到页面mounted里面，生命周期放的越前越好
+
+为什么？
+首先，wx.config里面的url必须是动态获取的，不能写死，因为在分享的时候微信会给你在链接里下毒，没毒不让分享。
+其次，url必须和你后台配置的js安全域名一样，本地测试不了你可以放到开发环境测试，实在不行你过来打我。
+最后，微信开发者文档在这里，有不懂的加群问我，群号在最后 https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
