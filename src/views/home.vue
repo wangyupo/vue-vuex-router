@@ -6,7 +6,7 @@
             vuex示例：
             {{getUserInfo}}
         </p>
-        <p>
+        <p @click="handleUrl">
             iconfont:
             <i class="iconfont icon-weibo"></i>
         </p>
@@ -171,6 +171,10 @@
             },
             handleToast() {
                 this.$toast('Hello Vue Plugin', 'success')
+            },
+            // 点我可以改变URL而不刷新页面哦，vue-router就用的这个
+            handleUrl() {
+                history.pushState({}, null, `${location.href.split('#')[0].split('?')[0]}#/`);
             }
         }
     };

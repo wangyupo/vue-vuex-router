@@ -18,7 +18,7 @@ Vue.use(Router)
 
 let base = `${process.env.BASE_URL}` // 动态获取二级目录
 
-export default new Router({
+const router = new Router({
     mode: 'history',
     base: base,
     routes: [{
@@ -46,4 +46,10 @@ export default new Router({
             }
         }
     }
-})
+});
+
+router.beforeEach((to, from, next) => {
+    // 做些什么，通常权限控制就在这里做哦
+});
+
+export default router;
