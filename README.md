@@ -283,7 +283,7 @@ import wx from 'weixin-js-sdk'
 为什么？
 首先，wx.config里面的url必须是动态获取的，不能写死，因为在分享的时候微信会给你在链接里下毒，没毒不让分享。
 其次，url必须和你后台配置的js安全域名一样，本地测试不了你可以放到开发环境测试，实在不行你过来打我。
-最后，微信开发者文档在这里，有不懂的加群问我，群号在最后 https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1445241432
+最后，微信开发者文档在这里，有不懂的加群问我，群号在最后 https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
 ```
 
 ## 更多自定义配置
