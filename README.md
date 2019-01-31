@@ -268,7 +268,7 @@ NP.plus(0.1, 0.2)
 更多使用方法参考官方文档：https://cn.vuejs.org/v2/guide/filters.html
 ```
 
-13、我用你这个框架开发微信公众号，在做微信分享的时候wx.config总是不过，一直报"invalid signature"，后端也找不出毛病来，该怎么解决？
+13、我用你这个框架开发微信公众号，在做微信分享的时候wx.config总是不过，一直报"invalid signature"，后端也找不出毛病来，你给我解决解决吧
 
 ```
 vue这样引入sdk
