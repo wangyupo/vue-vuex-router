@@ -291,6 +291,8 @@ import wx from 'weixin-js-sdk'
 
 ```
 如果你是mac电脑，试试用 control + c 来关闭node服务，而不要用 control + z
+
+windows电脑，我不知道
 ```
 
 ## 更多自定义配置
