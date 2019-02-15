@@ -178,6 +178,7 @@ Tips：建议动态引入，避免调整页面带来的路径问题
 ```
 使用 ~
 
+@import "~@/scss/_var.css";
 @import "~@/assets/iconfont/iconfont.css";
 background: url("~@/assets/img/xxx.png");
 
