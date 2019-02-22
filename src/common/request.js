@@ -38,30 +38,30 @@ AJAX.interceptors.response.use(function (response) {
 
 // 定义对外Get、Post、File请求
 export default {
-    get(url, param = {}, headers = {}, notUseBaseURL = false) {
+    get(url, param = {}, headers = {}) {
         return AJAX.get(url, {
             params: param,
             headers,
         })
     },
-    post(url, param = null, headers = {}, notUseBaseURL = false) {
+    post(url, param = null, headers = {}) {
         return AJAX.post(url, param, {
             headers,
         })
     },
-    put(url, param = null, headers = {}, notUseBaseURL = false) {
+    put(url, param = null, headers = {}) {
         return AJAX.put(url, param, {
             headers,
         })
     },
-    file(url, param = null, headers = {}, notUseBaseURL = false) {
+    file(url, param = null, headers = {}) {
         return AJAX.post(url, param, {
             headers: Object.assign({
                 'Content-Type': 'multipart/form-data'
             }, headers)
         })
     },
-    delete(url, param = null, headers = {}, notUseBaseURL = false) {
+    delete(url, param = null, headers = {}) {
         return AJAX.delete(url, {
             param,
             headers: Object.assign({
