@@ -45,7 +45,7 @@ module.exports = {
             sass: {
                 data: `
                 @import "@/style/mixin.scss";
-                @import "@/style/var.scss";
+                @import "@/style/_var.scss";
                 `
             }
         }

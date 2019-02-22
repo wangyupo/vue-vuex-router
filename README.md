@@ -202,6 +202,7 @@ Tips：建议动态引入，避免调整页面带来的路径问题
 ```
 使用 ~
 
+@import "~@/scss/_var.css";
 @import "~@/assets/iconfont/iconfont.css";
 background: url("~@/assets/img/xxx.png");
 
@@ -308,6 +309,14 @@ import wx from 'weixin-js-sdk'
 首先，wx.config里面的url必须是动态获取的，不能写死，因为在分享的时候微信会给你在链接里下毒，没毒不让分享。
 其次，url必须和你后台配置的js安全域名一样，本地测试不了你可以放到开发环境测试，实在不行你过来打我。
 最后，微信开发者文档在这里，有不懂的加群问我，群号在最后 https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
+```
+
+14、为什么我关了node服务，再次yarn serve的时候，端口号就变了，每关一次，端口号就会变一次，好麻烦呀，能不能让他不变？
+
+```
+如果你是mac电脑，试试用 control + c 来关闭node服务，而不要用 control + z
+
+windows电脑，我不知道
 ```
 
 ## 更多自定义配置
