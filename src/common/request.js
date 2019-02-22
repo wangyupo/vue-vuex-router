@@ -46,8 +46,21 @@ export default {
             headers,
         })
     },
+    put(url, param = null, headers = {}, notUseBaseURL = false) {
+        return AJAX.put(url, param, {
+            headers,
+        })
+    },
     file(url, param = null, headers = {}, notUseBaseURL = false) {
         return AJAX.post(url, param, {
+            headers: Object.assign({
+                'Content-Type': 'multipart/form-data'
+            }, headers)
+        })
+    },
+    delete(url, param = null, headers = {}, notUseBaseURL = false) {
+        return AJAX.delete(url, {
+            param,
             headers: Object.assign({
                 'Content-Type': 'multipart/form-data'
             }, headers)
