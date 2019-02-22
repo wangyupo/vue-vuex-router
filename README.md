@@ -311,7 +311,7 @@ import wx from 'weixin-js-sdk'
 最后，微信开发者文档在这里，有不懂的加群问我，群号在最后 https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115
 ```
 
-14、为什么我关了node服务，再次yarn serve的时候，端口号就变了，每关一次，端口号就会变一次，好麻烦呀，能不能让他不变？
+14、为什么我关了node服务，再次yarn serve的时候，端口号就变了，每关一次，端口号就会变一次，调试起来好麻烦呀，能不能让他不变？
 
 ```
 如果你是mac电脑，试试用 control + c 来关闭node服务，而不要用 control + z

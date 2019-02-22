@@ -29,36 +29,39 @@ AJAX.interceptors.response.use(function (response) {
     // 对响应数据做点什么
     return response.data;
 }, function (error) {
-    // 对响应错误做点什么
+    // 对响应错误做点什么，比如400、401、402等等
+    if (error && error.response) {
+        console.log(error.response)
+    }
     return Promise.reject(error);
 });
 
 // 定义对外Get、Post、File请求
 export default {
-    get(url, param = {}, headers = {}, notUseBaseURL = false) {
+    get(url, param = {}, headers = {}) {
         return AJAX.get(url, {
             params: param,
             headers,
         })
     },
-    post(url, param = null, headers = {}, notUseBaseURL = false) {
+    post(url, param = null, headers = {}) {
         return AJAX.post(url, param, {
             headers,
         })
     },
-    put(url, param = null, headers = {}, notUseBaseURL = false) {
+    put(url, param = null, headers = {}) {
         return AJAX.put(url, param, {
             headers,
         })
     },
-    file(url, param = null, headers = {}, notUseBaseURL = false) {
+    file(url, param = null, headers = {}) {
         return AJAX.post(url, param, {
             headers: Object.assign({
                 'Content-Type': 'multipart/form-data'
             }, headers)
         })
     },
-    delete(url, param = null, headers = {}, notUseBaseURL = false) {
+    delete(url, param = null, headers = {}) {
         return AJAX.delete(url, {
             param,
             headers: Object.assign({
