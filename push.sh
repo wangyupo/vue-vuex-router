@@ -8,6 +8,6 @@ if [ ! -n "$remarks" ];then
 	remarks="常规提交"
 fi
 git commit -m "$remarks"
-
+echo "正在开始提交代码..."
 git push
 echo "代码提交成功，正在关闭..."
