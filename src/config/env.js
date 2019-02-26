@@ -11,7 +11,7 @@ const dev = {
     routerMode: 'history', // hash
 
     /* beta */
-    baseUrl: "https://api.douban.com",
+    baseUrl: `${location.origin}`,         // 自定义反向代理
     credential: true,
 };
 
