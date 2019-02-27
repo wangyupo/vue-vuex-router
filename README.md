@@ -295,6 +295,16 @@ import wx from 'weixin-js-sdk'
 windows电脑，我不知道
 ```
 
+15、我用你这个开发微信公众号，在IOS手机上下滑动的时候，整个页面就被拖着走，这个怎么解决？
+
+```
+使用iNoBounce，使用方法：
+1、在public文件夹下自己创建一份inobounce.min.js
+2、然后在index.html加这段代码 <script src="./inobounce.min.js"></script>
+
+github地址：https://github.com/wangyupo/iNoBounce
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
