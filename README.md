@@ -305,6 +305,21 @@ windows电脑，我不知道
 github地址：https://github.com/wangyupo/iNoBounce
 ```
 
+16、加上iNoBounce以后IOS不能滚动什么情况？部分页面不能滚动又是什么情况？
+
+```
+所有页面都不能滚动
+在最外层加这样的css：
+overflow-y:scroll;
+-webkit-overflow-scrolling:touch;
+
+如果有单个页面不滚动，比如你在页面里面加了vant的list组件，发现页面不能上下滑动
+本页面最外层的css这样写：
+height: 100vh;
+overflow-y:scroll;
+-webkit-overflow-scrolling:touch;
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
