@@ -32,6 +32,7 @@ module.exports = {
     },
 
     configureWebpack: config => {
+        // 生产环境打包分析体积
         if (process.env.NODE_ENV === 'production') {
             return {
                 plugins: [

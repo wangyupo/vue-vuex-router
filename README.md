@@ -1,6 +1,16 @@
 ## 说明
 
-vueCli3项目脚手架
+vueCli3项目脚手架，SPA最佳实践。
+
+*注意！这是一份Vue的最佳实践，包括了实践展示，但是并不包括新手入门，如果你是Vue新手，可以按如下路径学习Vue：*
+
+```
+1、用Vue+Vue Router做一个展示网站。网站按页面划分模块，每个页面按section（部分）再划分模块。培养自己的模块化思想。
+2、用Vue+Vue Router+Axios做一个带请求的网站。把请求结果放在页面上展示出来。锻炼请求接口的能力，了解前后端分离思想。
+3、用Vue+Vue Router+Axios+Vuex做一个能管理数据的网站。把请求放到Vuex中，用store管理数据。搞懂Vuex在开发中的帮助，提升项目开发能力。
+
+做完上面三步你就已经入门Vue了，接下来就可以用这个最佳实践来构建更优雅的代码、组织更简洁的项目。
+```
 
 ## 常用命令
 
@@ -317,6 +327,31 @@ import wx from 'weixin-js-sdk'
 如果你是mac电脑，试试用 control + c 来关闭node服务，而不要用 control + z
 
 windows电脑，我不知道
+```
+
+15、我用你这个开发微信公众号，在IOS手机上下滑动的时候，整个页面就被拖着走，这个怎么解决？
+
+```
+使用iNoBounce，使用方法：
+1、在public文件夹下自己创建一份inobounce.min.js
+2、然后在index.html加这段代码 <script src="./inobounce.min.js"></script>
+
+github地址：https://github.com/wangyupo/iNoBounce
+```
+
+16、加上iNoBounce以后IOS不能滚动什么情况？部分页面不能滚动又是什么情况？
+
+```
+所有页面都不能滚动
+在最外层加这样的css：
+overflow-y:scroll;
+-webkit-overflow-scrolling:touch;
+
+如果有单个页面不滚动，比如你在页面里面加了vant的list组件，发现页面不能上下滑动
+本页面最外层的css这样写：
+height: 100vh;
+overflow-y:scroll;
+-webkit-overflow-scrolling:touch;
 ```
 
 ## 更多自定义配置
