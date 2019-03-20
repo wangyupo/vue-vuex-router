@@ -20,7 +20,7 @@ module.exports = {
         host: '0.0.0.0',    // 指定使用一个 host，默认是 localhost
         port: 8080,         // 端口地址
         https: false,       // 使用https提供服务
-        // 设置代理
+        // 设置代理，此处应该配置为开发服务器的后台地址
         proxy: 'http://api.zhuishushenqi.com'
     },
 

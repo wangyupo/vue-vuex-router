@@ -78,10 +78,19 @@ Tips：如果需要使用 px 作为单位，可以把 PX 大写，或者在后�
 
 1、命名
 
-文件命名:
+组件命名:
 
 ```
-采用小写驼峰，如：countDown.vue 为一个倒计时组件，home.vue 为首页。
+文件与组件命名保持一致，使用 PascalCase，即驼峰命名法，如：CountDown.vue 为一个倒计时组件。
+
+参考链接：
+https://cn.vuejs.org/v2/guide/components-registration.html#%E7%BB%84%E4%BB%B6%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99
+```
+
+页面命名：
+
+```
+Vue中什么都是组件，包括页面，但是我们为了与UI、业务组件作出区分，凡是页面组件的命名均以"小驼峰法"命名，如：home.vue。
 ```
 
 变量命名：
