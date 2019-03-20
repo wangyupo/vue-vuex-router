@@ -1,4 +1,4 @@
-import ToastComponent from './toast'
+import ToastComponent from './Toast'
 
 const Toast = {};
 
