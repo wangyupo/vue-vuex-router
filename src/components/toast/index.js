@@ -1,5 +1,8 @@
 /**
  * Vue插件
+ *
+ * 原理：通过 vm.extend 构造器，将 .vue 文件做成一个"子类"，实例化后，挂载在html文档上，然后添加到body即可。具体的操控即可通过'实例'对象来组成了。
+ *
  * 参考链接：
  * https://cn.vuejs.org/v2/api/#Vue-extend
  * https://cn.vuejs.org/v2/api/#vm-mount
@@ -14,8 +17,8 @@ Toast.install = (Vue) => {
     const ToastConstructor = Vue.extend(ToastComponent);
     // 第二步：创造一个组件实例
     const instance = new ToastConstructor();
-    // 第三步：将实例挂在到div上
-    instance.$mount(document.createElement('div'));
+    // 第三步：挂载实例
+    instance.$mount();
     // 第四步：在body添加组件
     document.body.appendChild(instance.$el);
 
