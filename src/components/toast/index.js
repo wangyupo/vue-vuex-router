@@ -17,7 +17,7 @@ Toast.install = (Vue) => {
     const ToastConstructor = Vue.extend(ToastComponent);
     // 第二步：创造一个组件实例
     const instance = new ToastConstructor();
-    // 第三步：挂载实例
+    // 第三步：挂载实例。挂载的目标就是把模板渲染成最终的DOM。
     instance.$mount();
     // 第四步：在body添加组件
     document.body.appendChild(instance.$el);
