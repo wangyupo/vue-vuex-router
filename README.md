@@ -41,9 +41,9 @@ yarn push
     - components        // 组件目录
     - config            // 配置文件目录
         - env.js            // 环境配置
-        - lang              // 语言目录
     - fliters           // 公共过滤器
     - layouts           // 外层布局
+    - locale            // i18n语言目录
     - router            // 路由
     - store             // Vuex管理目录
     - style             // 公共样式目录
