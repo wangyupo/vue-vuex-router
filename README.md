@@ -141,6 +141,7 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 9、参考
 
 [凹凸实验室前端代码规范](https://guide.aotu.io/docs/)
+[风格指南](https://cn.vuejs.org/v2/style-guide/)
 
 ## 常见问题
 
