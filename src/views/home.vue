@@ -74,7 +74,7 @@
 <script>
     // @ is an alias to /src
     import HelloWorld from "@/components/HelloWorld";
-    import CountDown from "@/components/CountDown";
+    import CountDown from "@/components/CountDown.vue";
     import CountDown2 from "@/components/CountDown"
     import Dialog from "@/components/Dialog";
     import {mapState, mapMutations, mapActions, mapGetters} from "vuex";
