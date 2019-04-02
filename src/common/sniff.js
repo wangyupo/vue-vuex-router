@@ -122,4 +122,4 @@ sniff.pc = platform.indexOf('Mac') === 0 || platform.indexOf('Win') === 0 || (pl
 
 window.sniff = sniff;
 
-module.exports = sniff;
+export default sniff;
