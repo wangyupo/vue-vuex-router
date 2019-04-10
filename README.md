@@ -235,7 +235,7 @@ proxy: 'http://xxx.com'
 
 方法二：
 单独写一个style，不加scoped，在这里面单独修改
-<style scoped>
+<style>
     .a .b { /* ... */ }
 </style>
 ```
