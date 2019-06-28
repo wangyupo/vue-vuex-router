@@ -5,7 +5,8 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "analyz": "vue-cli-service build --report"
+        "analyz": "vue-cli-service build --report",
+        "push": "./push.sh"
     },
     "dependencies": {
         "animate.css": "^3.7.0",
