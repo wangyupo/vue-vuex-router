@@ -340,6 +340,17 @@ overflow-y:scroll;
 -webkit-overflow-scrolling:touch;
 ```
 
+17、ios input获取焦点有延迟怎么解决？
+
+```
+//main.js 引入
+import FastClick from 'fastclick';
+FastClick.attach(document.body);
+FastClick.prototype.focus = (ele) => { 'use strict'; ele.focus(); }; //修改focus()方法
+
+参考链接：https://github.com/ftlabs/fastclick/issues/583
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
