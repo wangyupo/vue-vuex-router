@@ -5,9 +5,9 @@ vueCli3项目脚手架，SPA最佳实践。
 *注意！这是一份Vue的最佳实践，包括了实践展示，但是并不包括新手入门，如果你是Vue新手，可以按如下路径学习Vue：*
 
 ```
-1、用Vue+Vue Router做一个展示网站。网站按页面划分模块，每个页面按section（部分）再划分模块。培养自己的模块化思想。
-2、用Vue+Vue Router+Axios做一个带请求的网站。把请求结果放在页面上展示出来。锻炼请求接口的能力，了解前后端分离思想。
-3、用Vue+Vue Router+Axios+Vuex做一个能管理数据的网站。把请求放到Vuex中，用store管理数据。搞懂Vuex在开发中的帮助，提升项目开发能力。
+1、用Vue+Vue-Router做一个展示网站。网站按页面划分模块，每个页面按section（部分）再划分模块。培养自己的模块化思想。
+2、用Vue+Vue-Router+Axios做一个带请求的网站。把请求结果放在页面上展示出来。锻炼请求接口的能力，了解前后端分离思想。
+3、用Vue+Vue-Router+Axios+Vuex做一个能管理数据的网站。把请求放到Vuex中，用store管理数据。搞懂Vuex在开发中的帮助，提升项目开发能力。
 
 做完上面三步你就已经入门Vue了，接下来就可以用这个最佳实践来构建更优雅的代码、组织更简洁的项目。
 ```
@@ -41,9 +41,9 @@ yarn push
     - components        // 组件目录
     - config            // 配置文件目录
         - env.js            // 环境配置
-        - lang              // 语言目录
     - fliters           // 公共过滤器
     - layouts           // 外层布局
+    - locale            // i18n语言目录
     - router            // 路由
     - store             // Vuex管理目录
     - style             // 公共样式目录
@@ -165,6 +165,7 @@ store 按页面或者业务划分，然后统一由 store/index.js 输出
 9、参考
 
 [凹凸实验室前端代码规范](https://guide.aotu.io/docs/)
+[风格指南](https://cn.vuejs.org/v2/style-guide/)
 
 ## 常见问题
 
@@ -258,7 +259,7 @@ proxy: 'http://xxx.com'
 
 方法二：
 单独写一个style，不加scoped，在这里面单独修改
-<style scoped>
+<style>
     .a .b { /* ... */ }
 </style>
 ```
@@ -361,6 +362,17 @@ overflow-y:scroll;
 height: 100vh;
 overflow-y:scroll;
 -webkit-overflow-scrolling:touch;
+```
+
+17、ios input获取焦点有延迟怎么解决？
+
+```
+//main.js 引入
+import FastClick from 'fastclick';
+FastClick.attach(document.body);
+FastClick.prototype.focus = (ele) => { 'use strict'; ele.focus(); }; //修改focus()方法
+
+参考链接：https://github.com/ftlabs/fastclick/issues/583
 ```
 
 ## 更多自定义配置

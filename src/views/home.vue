@@ -123,8 +123,10 @@
             },
             timeStart() {
 
-            },
-            timeEnd() {
+				function animate(time) {
+					frameHandler = requestAnimationFrame(animate);
+					TWEEN.update(time); // time表示多长时间执行一次
+				}
 
             },
             handleDialog() {
@@ -133,14 +135,13 @@
 			handleI18n() {
 				this.$i18n.locale = this.$i18n.locale === "en-US" ? "zh-CN" : "en-US";
 			},
+
             tweenJS() {
                 let frameHandler
-
                 function animate(time) {
                     frameHandler = requestAnimationFrame(animate);
                     TWEEN.update(time); // time表示多长时间执行一次
                 }
-
                 // 创建补间动画
                 let that = this;
                 let tween = new TWEEN.Tween({num: 0})
@@ -155,31 +156,34 @@
                         cancelAnimationFrame(frameHandler)
                     })
                     .start()
-
                 // 开始补间动画
                 animate();
             },
-            openDialog() {
-                this.isVisible = true;
-            },
-            closeDialog() {
-                this.isVisible = false;
-            },
-            startCountdown: function () {
-                this.counting = true;
-            },
-            handleCountdownEnd: function () {
-                this.counting = false;
-            },
-            handleToast() {
-                this.$toast('Hello Vue Plugin', 'success')
-            },
-            // 用于清空hash路由中间卡着的不必要的信息，如：/?sdfdsf#/
-            handleUrl() {
-                history.pushState({}, null, location.href.replace(/\/\?(.*?)\#\//, '/#/'));
-            }
-        }
-    };
+			openDialog() {
+				this.isVisible = true;
+			},
+			closeDialog() {
+				this.isVisible = false;
+			},
+			startCountdown: function() {
+				this.counting = true;
+			},
+			handleCountdownEnd: function() {
+				this.counting = false;
+			},
+			handleToast() {
+				this.$toast("Hello Vue Plugin", "success");
+			},
+			// 用于清空hash路由中间卡着的不必要的信息，如：/?sdfdsf#/
+			handleUrl() {
+				history.pushState(
+					{},
+					null,
+					location.href.replace(/\/\?(.*?)\#\//, "/#/")
+				);
+			}
+		}
+	};
 </script>
 
 <style lang="scss" scoped>

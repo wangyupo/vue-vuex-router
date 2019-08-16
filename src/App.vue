@@ -17,6 +17,7 @@
 </script>
 
 <style lang="scss">
+    @import "./style/normalize.scss";
     @import "./style/reset.scss";
     @import "./style/common.scss";
     @import "~@/assets/iconfont/iconfont.css";

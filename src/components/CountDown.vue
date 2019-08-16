@@ -177,6 +177,7 @@
 					let _e = Date.now();
 					let diffPerFunc = _e - _s;
 					setTimeout(() => {
+						endTime -= 0;
 						if (type) {
 							this.runTime(this.end, (endTime += 1000), callFun, true);
 						} else {
