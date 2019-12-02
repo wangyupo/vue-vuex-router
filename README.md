@@ -355,3 +355,7 @@ FastClick.prototype.focus = (ele) => { 'use strict'; ele.focus(); }; //修改foc
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 如果有任何问题，欢迎大家入群交流，群号：739637719
+
+## License
+
+[MIT](https://github.com/wangyupo/vue-vuex-router/blob/master/LICENSE)
