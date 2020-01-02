@@ -228,6 +228,10 @@ background: url("~@/assets/img/xxx.png");
 
 原理：
 CSS loader 会把把非根路径的url解释为相对路径，加~前缀才会解释成模块路径。
+
+参考文档：
+https://cli.vuejs.org/zh/guide/css.html#%E5%BC%95%E7%94%A8%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90
+https://cli.vuejs.org/zh/guide/html-and-static-assets.html#url-%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99
 ```
 
 7、我想修改Toast的样式怎么办？
