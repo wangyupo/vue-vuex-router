@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<img @click="openDialog" alt="Vue logo" src="../assets/logo.png" />
+		<img @click="openDialog" alt="Vue logo" src="@assets/logo.png" />
 		<HelloWorld msg="Welcome to Your Vue.js App" />
 		<p @click="changeUserInfo(233)">
 			vuex示例：
@@ -192,6 +192,7 @@
 		align-items: center;
 		text-align: center;
 		line-height: 1.2;
+        // background: url(~@assets/logo.png) no-repeat center; /*css使用alias示例*/
 	}
 
 	.dialog-content {
