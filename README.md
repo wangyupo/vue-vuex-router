@@ -379,6 +379,21 @@ FastClick.prototype.focus = (ele) => { 'use strict'; ele.focus(); }; //修改foc
 参考链接：https://github.com/ftlabs/fastclick/issues/583
 ```
 
+18、我公司有多个环境，我想打包出对应的代码包来，我该怎么弄？
+
+```
+.env 文件里配置所有环境都能用的变量
+.env.development 文件里配置开发环境的变量
+.env.production 文件里配置生产环境的变量
+.env.xx 文件内变量的使用方法都是 process.env. 开头，后跟你定义的变量名称，如 request.js 中的 process.env.VUE_APP_API ，用来控制不同打包情况下的api请求地址不同。
+
+最后需要打包 development 环境的包，就运行 yarn devbuild，打包生产环境的包，就运行 yarn build。
+
+参考链接：
+https://cli.vuejs.org/zh/guide/mode-and-env.html#%E6%A8%A1%E5%BC%8F
+https://blog.csdn.net/qq_36407748/article/details/82050976
+```
+
 ## 更多自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
