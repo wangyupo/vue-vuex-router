@@ -362,7 +362,7 @@ FastClick.prototype.focus = (ele) => { 'use strict'; ele.focus(); }; //修改foc
 .env.production 文件里配置生产环境的变量
 .env.xx 文件内变量的使用方法都是 process.env. 开头，后跟你定义的变量名称，如 request.js 中的 process.env.VUE_APP_API ，用来控制不同打包情况下的api请求地址不同。
 
-最后需要打包 development 环境的包，就运行 yarn dev-build，打包生产环境的包，就运行 yarn build。
+最后需要打包 development 环境的包，就运行 yarn devbuild，打包生产环境的包，就运行 yarn build。
 
 参考链接：
 https://cli.vuejs.org/zh/guide/mode-and-env.html#%E6%A8%A1%E5%BC%8F
