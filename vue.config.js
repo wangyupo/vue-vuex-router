@@ -5,7 +5,14 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 function resolve(dir) {
     return path.join(__dirname, dir)
 }
+
 module.exports = {
+    // 公共路径
+    publicPath: './',
+
+    // 不同的环境打不同包名
+    outputDir: process.env.NODE_ENV === "development" ? 'devdist' : 'dist',
+
     // 使用运行时编译器的 Vue 构建版本
     runtimeCompiler: true,
 
@@ -16,10 +23,10 @@ module.exports = {
     lintOnSave: false,
 
     devServer: {
-        open: false,        // 是否自动打开浏览器页面
-        host: '0.0.0.0',    // 指定使用一个 host，默认是 localhost
-        port: 8080,         // 端口地址
-        https: false,       // 使用https提供服务
+        open: false, // 是否自动打开浏览器页面
+        host: '0.0.0.0', // 指定使用一个 host，默认是 localhost
+        port: 8080, // 端口地址
+        https: false, // 使用https提供服务
         // 这里写你调用接口的基础路径，来解决跨域，如果设置了代理，那你本地开发环境的axios的baseUrl要写为 '' ，即空字符串
         proxy: 'http://api.zhuishushenqi.com'
     },

@@ -5,6 +5,7 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
+        "devbuild": "vue-cli-service build --mode development",
         "analyz": "vue-cli-service build --report",
         "push": "./push.sh"
     },

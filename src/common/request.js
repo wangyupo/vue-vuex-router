@@ -7,7 +7,7 @@ const MOCKURL = ''; // mock数据地址
  * 自定义Axios实例
  */
 const AJAX = axios.create({
-    baseURL: env.baseUrl,
+    baseURL: process.env.VUE_APP_API,
     timeout: 30000,
     withCredentials: env.credential
 });
@@ -15,9 +15,9 @@ const AJAX = axios.create({
 // 添加请求拦截器
 AJAX.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
-    if (process.env.NODE_ENV === 'development') {
-        config.url = `http://${location.host}` + config.url;           // 自定义反向代理
-    }
+    // if (process.env.NODE_ENV === 'development') {
+    //     config.url = `http://${location.host}` + config.url; // 自定义反向代理，可以在demo阶段打开看下请求效果
+    // }
     return config;
 }, function (error) {
     // 对请求错误做些什么
