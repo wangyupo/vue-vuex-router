@@ -19,7 +19,7 @@ Vue.use(Router)
 let base = `${process.env.BASE_URL}` // 动态获取二级目录
 
 const router = new Router({
-    mode: 'history',
+    // mode: 'history', // 路由有两种模式：history、hash，想要不带#号就选history，默认是hash模式
     base: base,
     routes: [{
             path: '/',
