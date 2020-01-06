@@ -32,10 +32,14 @@ module.exports = {
     },
 
     chainWebpack: (config) => {
+        // 设置一些常用alias
         config.resolve.alias
             .set('@', resolve('src'))
             .set('@assets', resolve('src/assets'))
             .set('@components', resolve('src/components'))
+
+        // 移除 prefetch 插件，减少首屏加载
+        config.plugins.delete('prefetch')
     },
 
     configureWebpack: config => {
