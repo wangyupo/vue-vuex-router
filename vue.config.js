@@ -39,8 +39,12 @@ module.exports = {
     },
 
     configureWebpack: config => {
-        // 生产环境打包分析体积
+        // 生产环境
         if (process.env.NODE_ENV === 'production') {
+            // 生产环境去除console
+            config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
+
+            // 生产环境打包分析体积
             return {
                 plugins: [
                     new BundleAnalyzerPlugin()
@@ -50,6 +54,7 @@ module.exports = {
     },
     css: {
         loaderOptions: {
+            // 全局使用的一些scss样式
             sass: {
                 data: `
                 @import "@/style/mixin.scss";
