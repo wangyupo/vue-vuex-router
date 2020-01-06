@@ -358,6 +358,7 @@ FastClick.prototype.focus = (ele) => { 'use strict'; ele.focus(); }; //修改foc
 18、我公司有多个环境，我想打包出对应的代码包来，我该怎么弄？
 
 ```
+.env 文件里配置所有环境都能用的变量
 .env.development 文件里配置开发环境的变量
 .env.production 文件里配置生产环境的变量
 .env.xx 文件内变量的使用方法都是 process.env. 开头，后跟你定义的变量名称，如 request.js 中的 process.env.VUE_APP_API ，用来控制不同打包情况下的api请求地址不同。
