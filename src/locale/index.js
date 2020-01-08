@@ -14,7 +14,7 @@ Vue.use(VueI18n);
 const browserLang = navigator.language || navigator.browserLanguage;
 
 const i18n = new VueI18n({
-    // locale: getStore("iotc_lang") || browserLang || 'zh-CN',
+    // locale: getStore("language") || browserLang || 'zh-CN',
     locale: 'zh-CN',
     messages
 });
