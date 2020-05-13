@@ -1,8 +1,22 @@
-## 说明
+# 标题
 
-vueCli3项目脚手架，SPA最佳实践。
+<p align="center"><img src="https://wangyupo.github.io/best-cli/_nuxt/img/708a1cb.png" alt="omi" width="100"/></p>
+<h2 align="center">vue-vuex-router</h2>
+<p align="center"><b>基于Vue CLI 3构建的项目初始化文件，master、mobile两个分支，pc端、mobile端开箱即用。</b></p>
 
-*注意！这是一份Vue的最佳实践，包括了实践展示，但是并不包括新手入门，如果你是Vue新手，可以按如下路径学习Vue：*
+## 文档内容
+
+- [注意](#注意)
+- [安装和使用](#安装和使用)
+- [项目结构](#项目结构)
+- [推荐规范](#推荐规范)
+- [常见问题](#常见问题)
+- [更多自定义配置](#更多自定义配置)
+- [License](#License)
+
+## 注意
+
+注意！这是一份Vue的最佳实践，包括了实践展示，但是并不包括新手入门，如果你是Vue新手，可以按如下路径学习Vue：
 
 ```
 1、用Vue+Vue-Router做一个展示网站。网站按页面划分模块，每个页面按section（部分）再划分模块。培养自己的模块化思想。
@@ -12,7 +26,7 @@ vueCli3项目脚手架，SPA最佳实践。
 做完上面三步你就已经入门Vue了，接下来就可以用这个最佳实践来构建更优雅的代码、组织更简洁的项目。
 ```
 
-## 常用命令
+## 安装和使用
 
 ```
 安装插件
@@ -401,4 +415,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## License
 
-[MIT](https://github.com/wangyupo/vue-vuex-router/blob/master/LICENSE)
+[MIT © Richard McRichface.](https://github.com/wangyupo/vue-vuex-router/blob/master/LICENSE)
