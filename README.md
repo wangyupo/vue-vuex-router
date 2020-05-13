@@ -1,5 +1,3 @@
-# 标题
-
 <p align="center"><img src="https://wangyupo.github.io/best-cli/_nuxt/img/708a1cb.png" alt="omi" width="100"/></p>
 <h2 align="center">vue-vuex-router</h2>
 <p align="center"><b>基于Vue CLI 3构建的项目初始化文件，master、mobile两个分支，pc端、mobile端开箱即用。</b></p>
