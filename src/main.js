@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
-import i18n from './locale'
-import filters from './filters'
+import router from './router' // vue-router配置
+import store from './store' // vuex配置
+import i18n from './locale' // 国际化配置
+import filters from './filters' // vue过滤器
 
+// 自定义的toast（这里仅做示例，需自己根据需求变动）
 import Toast from './components/toast/index'
 Vue.use(Toast);
 
