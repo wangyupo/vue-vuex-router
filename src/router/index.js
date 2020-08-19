@@ -41,8 +41,15 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
+<<<<<<< HEAD
     sessionSetItem('tabBar', to.name);
     return next()
+=======
+    // 做些什么，通常权限控制就在这里做。
+
+    // 这里必须写next()，否则页面会阻止下一步操作。
+    next();
+>>>>>>> master
 });
 
 export default router;
