@@ -10,6 +10,7 @@
 - [推荐规范](#推荐规范)
 - [常见问题](#常见问题)
 - [更多自定义配置](#更多自定义配置)
+- [进阶vue3](#进阶vue3)
 - [License](#License)
 
 ## 注意
@@ -389,6 +390,9 @@ https://blog.csdn.net/qq_36407748/article/details/82050976
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 如果有任何问题，欢迎大家入群交流，群号：739637719
+
+## 进阶vue3
+vue3 的入门书，它有直观的示例、代码、说明，可以让你快速上手 vue3 的 setup 写法，迅速过渡到 组合式API 写法中去，传送门：[vue3-cookbook](https://github.com/wangyupo/vue3-cookbook)
 
 ## License
 
