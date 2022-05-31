@@ -410,9 +410,7 @@ https://blog.csdn.net/qq_36407748/article/details/82050976
 ```
 
 ## 更多自定义配置
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-如果有任何问题，欢迎大家入群交流，群号：739637719
+See [Configuration Reference](https://cli.vuejs.org/config/)
 
 ## License
 
